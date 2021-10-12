@@ -17,6 +17,8 @@
 #include "ft_isalpha.h"
 #include "ft_isdigit.h"
 #include "ft_isalnum.h"
+#include "ft_isascii.h"
+#include "ft_isprint.h"
 
 // test function
 int		print_errors(int test_index, char *function_name, int ft_function, int c_function)
@@ -65,5 +67,32 @@ int	main(void)
 	print_errors(5, "ft_isalnum",		ft_isalnum(11),		isalnum(11));
 	print_errors(6, "ft_isalnum",		ft_isalnum('\n'),	isalnum('\n'));
 
+	// ft_isascii
+	print_errors(1, "ft_isascii",		ft_isascii('c'),	isascii('c'));
+	print_errors(2, "ft_isascii",		ft_isascii('?'),	isascii('?'));
+	print_errors(3, "ft_isascii",		ft_isascii(' '),	isascii(' '));
+	print_errors(4, "ft_isascii",		ft_isascii(0),		isascii(0));
+	print_errors(5, "ft_isascii",		ft_isascii(11),		isascii(11));
+	print_errors(6, "ft_isascii",		ft_isascii('\n'),	isascii('\n'));
+	print_errors(7, "ft_isascii",		ft_isascii(0x7c),	isascii(0x7c));
+	print_errors(8, "ft_isascii",		ft_isascii(0x80),	isascii(0x80));
+	print_errors(9, "ft_isascii",		ft_isascii(0x81),	isascii(0x81));
+	// printf("%d\n", ft_isascii(0x7c)); printf("%d\n", isascii(0x7c));
+	// printf("%d\n", ft_isascii(0x80)); printf("%d\n", isascii(0x80));
+	// printf("%d\n", ft_isascii(0x81)); printf("%d\n", isascii(0x81));
+
+	// ft_isprint
+	print_errors(1, "ft_isprint",		ft_isprint('c'),	isprint('c'));
+	print_errors(2, "ft_isprint",		ft_isprint('\t'),	isprint('\t'));
+	print_errors(3, "ft_isprint",		ft_isprint('Z'),	isprint('Z'));
+	print_errors(4, "ft_isprint",		ft_isprint(2),		isprint(2));
+	print_errors(5, "ft_isprint",		ft_isprint('9'),	isprint('9'));
+	print_errors(6, "ft_isprint",		ft_isprint(99),		isprint(99));
+	print_errors(7, "ft_isprint",		ft_isprint(' '),	isprint(' '));
+	print_errors(9, "ft_isprint",		ft_isprint('\n'),	isprint('\n'));
+	print_errors(10, "ft_isprint",		ft_isprint(0x7c),	isprint(0x7c));
+	print_errors(11, "ft_isprint",		ft_isprint(0x80),	isprint(0x80));
+	print_errors(12, "ft_isprint",		ft_isprint(0),		isprint(0));
+	
 	return (0);
 }
