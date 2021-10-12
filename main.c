@@ -1,7 +1,8 @@
 // Main function to test errors in libft
+// Display modules with : ar -t libft.a
 // Compile with command :
-// make re 			(ou "make fclean" puis "make all" ou "make" ou "make libft.a")
-// gcc -Wall -Wextra -Werror main.c -L. -lft && ./a.out
+// 1. make re 			(ou "make fclean" puis "make all" ou "make" ou "make libft.a")
+// 2. gcc -Wall -Wextra -Werror main.c -L. -lft && ./a.out
 
 // lib for printf() and write()
 #include <stdio.h>
