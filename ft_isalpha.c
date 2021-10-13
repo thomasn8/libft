@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:46:47 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 11:49:36 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:12:45 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isalpha.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

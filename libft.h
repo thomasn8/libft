@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 11:47:05 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 16:12:38 by tnanchen         ###   ########.fr       */
+/*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
+/*   Updated: 2021/10/13 16:15:02 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_H
+# define LIBFT_H
 
-int	ft_isalnum(int c)
-{
-	if ((c >= 'a' && c <= 'z')
-		|| (c >= 'A' && c <= 'Z')
-		|| (c >= '0' && c <= '9'))
-		return (1);
-	return (0);
-}
+int		ft_isalpha(int c);
+
+int		ft_isdigit(int c);
+
+int		ft_isalnum(int c);
+
+int		ft_isascii(int c);
+
+int		ft_isprint(int c);
+
+typedef unsigned long	size_t;
+size_t	ft_strlen(const char *s);
+
+#endif

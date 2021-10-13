@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:47:32 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 11:50:53 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:12:59 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isprint.h"
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:46:37 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 11:50:18 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:12:49 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_isascii.h"
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

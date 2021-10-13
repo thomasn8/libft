@@ -8,21 +8,23 @@
 // 2.				gcc -Wall -Wextra -Werror main.c -L. -lft && ./a.out
 // 2.5 (optional) 	ar -t libft.a 		(display the modules/functions)
 
+// libft.h
+#include "libft.h"
 // lib for printf() and write()
 #include <stdio.h>
 #include <unistd.h>
 
 // lib for isalpha() and equivalents
 #include <ctype.h>
-#include "ft_isalpha.h"
-#include "ft_isdigit.h"
-#include "ft_isalnum.h"
-#include "ft_isascii.h"
-#include "ft_isprint.h"
+// #include "ft_isalpha.h"
+// #include "ft_isdigit.h"
+// #include "ft_isalnum.h"
+// #include "ft_isascii.h"
+// #include "ft_isprint.h"
 
 // lib for strlen() and equivalents
 #include <string.h>
-#include "ft_strlen.h"
+// #include "ft_strlen.h"
 
 // test function
 static int error_count = 0;		//global variable to get total of errors at the end of the tests
@@ -104,7 +106,7 @@ int	main(void)
 
 	// ft_strlen
 	print_errors("ft_strlen",		ft_strlen("salut"),	ft_strlen("salut"));
-	print_errors("ft_strlen",		ft_strlen("salut lausanne"),	ft_strlen("salut lausanne"));
+	print_errors("ft_strlen",		ft_strlen("salut lausanne2"),	ft_strlen("salut lausanne"));
 	char *lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n";
 	print_errors("ft_strlen",		ft_strlen(lorem),	ft_strlen(lorem));
 	// printf("%lu\n", ft_strlen("salut lausanne")); printf("%lu\n", strlen("salut lausanne"));
