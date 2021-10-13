@@ -138,6 +138,22 @@ int	main(void)
 	// printf("%s\n", ft_str2); 
 	// printf("%s\n", str2);
 
+	// ft_bzero
+	char ft_str3[15] = "Pointerrr";
+	char str3[15] = "Pointerrr";
+	ft_bzero(ft_str3 + 5, 4);	bzero(str3 + 5, 4);
+	print_errors_string("ft_bzero",		ft_str3,		str3);
+	//
+	char str4[40] = "Hello World ! Je suis ton père";
+	char ft_str4[40] = "Hello World ! Je suis ton père";
+	ft_bzero(ft_str4 + 14, 18);	bzero(str4 + 14, 18);
+	print_errors_string("ft_bzero",		ft_str4,		str4);
+	//
+	// printf("%s\n", ft_str3); 
+	// printf("%s\n", str3);
+	// printf("%s\n", ft_str4); 
+	// printf("%s\n", str4);
+
 
 	// Total of errors in tests
 	printf("%d errors in tests.\n", error_count);
