@@ -32,7 +32,20 @@ int		print_errors(char *function_name, int ft_function, int c_function)
 	if (ft_function != c_function)
 	{
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
-		printf("ft_function : %d\nC_function : %d\n\n", ft_function, c_function);
+		printf("ft_function : %d\nC_function :  %d\n\n", ft_function, c_function);
+		error_count++;
+		return(1);
+	}
+	return (0);
+}
+
+int		print_errors_string(char *function_name, char *ft_str, char *c_str)
+{
+	test_index++;
+	if (strcmp(ft_str, c_str) != 0)
+	{
+		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		printf("ft_function : %s\nC_function :  %s\n\n", ft_str, c_str);
 		error_count++;
 		return(1);
 	}
@@ -109,6 +122,24 @@ int	main(void)
 	// printf("%lu\n", ft_strlen("salut lausanne")); printf("%lu\n", strlen("salut lausanne"));
 	// printf("%lu\n", ft_strlen(lorem)); printf("%lu\n", strlen(lorem));
 
+	// ft_memset
+	char ft_str1[15] = "Hi you";
+	char str1[15] = "Hi you";
+	ft_memset(ft_str1 + 2, '_', 1);	memset(str1 + 2, '_', 1);
+	print_errors_string("ft_memset",		ft_str1,		str1);
+	//
+	char ft_str2[15] = "Salut la Terre";
+	char str2[15] = "Salut la Terre";
+	ft_memset(ft_str2 + 2, '.', 4);	memset(str2 + 2, '.', 4);
+	print_errors_string("ft_memset",		ft_str2,		str2);
+	//
+	// printf("%s\n", ft_str1); 
+	// printf("%s\n", str1);
+	// printf("%s\n", ft_str2); 
+	// printf("%s\n", str2);
+
+
+	// Total of errors in tests
 	printf("%d errors in tests.\n", error_count);
 	return (0);
 }

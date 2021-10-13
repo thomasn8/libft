@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 19:01:47 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/13 20:50:15 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int		ft_isprint(int c);
 
 //typedef unsigned long	size_t;
 size_t	ft_strlen(const char *s);
+
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
