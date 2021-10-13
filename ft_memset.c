@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:28:13 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/14 01:05:57 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 01:07:35 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // N is the amount of bytes (corresponding to unsigned char) from S to fill
 
 // we need to specify a type to modify the pointer
-// we can do that creating a copy of the pointer with the type
+// we can do that creating a copy of the pointer with the type.
 // incrementing the pointer position one by one, 
 // *p++ will modify the values pointed by the copy pointer
 // and then we can return the original pointer
