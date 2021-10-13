@@ -57,7 +57,9 @@ int	main(void)
 {
 	// Makefile test : 
 	printf("\nMakefile is okay\n\n");
+	//////////////////////////////////////////////////////////////////
 
+	// #include <ctype.h> ////////////////////////////////////////////
 	// ft_isalpha
 	print_errors("ft_isalpha",		ft_isalpha('c'),	isalpha('c'));
 	print_errors("ft_isalpha",		ft_isalpha('?'),	isalpha('?'));
@@ -113,7 +115,9 @@ int	main(void)
 	print_errors("ft_isprint",		ft_isprint(0x7c),	isprint(0x7c));
 	print_errors("ft_isprint",		ft_isprint(0x80),	isprint(0x80));
 	print_errors("ft_isprint",		ft_isprint(0),		isprint(0));
+	//////////////////////////////////////////////////////////////////
 
+	// #include <string.h>////////////////////////////////////////////
 	// ft_strlen
 	print_errors("ft_strlen",		ft_strlen("salut"),	ft_strlen("salut"));
 	print_errors("ft_strlen",		ft_strlen("salut lausanne"),	ft_strlen("salut lausanne"));
@@ -181,6 +185,10 @@ int	main(void)
 	// printf("memcpy  : %s\n", dest2);
 	// printf("ft_memcpy : %s\n", ft_dest3); 
 	// printf("memcpy  : %s\n", dest3);
+
+	// ft_memmove
+	
+	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
 	printf("%d errors in tests.\n", error_count);
