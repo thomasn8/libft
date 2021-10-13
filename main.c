@@ -12,13 +12,17 @@
 #include <stdio.h>
 #include <unistd.h>
 
-// lib for isalpha() and isdigit()
+// lib for isalpha() and equivalents
 #include <ctype.h>
 #include "ft_isalpha.h"
 #include "ft_isdigit.h"
 #include "ft_isalnum.h"
 #include "ft_isascii.h"
 #include "ft_isprint.h"
+
+// lib for strlen() and equivalents
+#include <string.h>
+#include "ft_strlen.h"
 
 // test function
 int		print_errors(int test_index, char *function_name, int ft_function, int c_function)
@@ -93,6 +97,10 @@ int	main(void)
 	print_errors(10, "ft_isprint",		ft_isprint(0x7c),	isprint(0x7c));
 	print_errors(11, "ft_isprint",		ft_isprint(0x80),	isprint(0x80));
 	print_errors(12, "ft_isprint",		ft_isprint(0),		isprint(0));
+
+	// ft_strlen()
+	// print_errors(1, "ft_strlen",		ft_strlen('salut'),	ft_strlen('salut'));
+	printf("%lu\n", ft_strlen("salut")); printf("%lu\n", strlen("salut"));
 	
 	return (0);
 }
