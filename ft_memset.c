@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 19:28:13 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 23:57:47 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 01:05:57 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@
 
 // we need to specify a type to modify the pointer
 // we can do that creating a copy of the pointer with the type
-// *p++ will, incrementing the pointer position one by one, modify the values pointed by the copy pointer
+// incrementing the pointer position one by one, 
+// *p++ will modify the values pointed by the copy pointer
 // and then we can return the original pointer
 void	*ft_memset(void *s, int c, size_t n)
 {
-	char	*p;
+	char	*ptr;
 
-	p = s;
+	ptr = s;
 	while (n--)
-		*p++ = c;
+		*ptr++ = c;
 	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 21:37:16 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 00:16:06 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,13 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 // typedef unsigned long	size_t;
+
 size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *s, int c, size_t n);
 
 void	ft_bzero(void *s, size_t n);
+
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif

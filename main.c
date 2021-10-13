@@ -144,8 +144,8 @@ int	main(void)
 	ft_bzero(ft_str3 + 5, 4);	bzero(str3 + 5, 4);
 	print_errors_string("ft_bzero",		ft_str3,		str3);
 	//
-	char str4[40] = "Hello World ! Je suis ton père";
 	char ft_str4[40] = "Hello World ! Je suis ton père";
+	char str4[40] = "Hello World ! Je suis ton père";
 	ft_bzero(ft_str4 + 14, 18);	bzero(str4 + 14, 18);
 	print_errors_string("ft_bzero",		ft_str4,		str4);
 	//
@@ -154,6 +154,33 @@ int	main(void)
 	// printf("%s\n", ft_str4); 
 	// printf("%s\n", str4);
 
+	// ft_memcpy
+	char src[40] = "Hello World ! Je suis ton père";
+	char ft_dest[40];
+	char dest[40];
+	ft_memcpy(ft_dest, src, 5);	
+	memcpy(dest, src, 5);
+	print_errors_string("ft_memcpy",		ft_dest,		dest);
+	//
+	char src2[40] = "Le jour se lève";
+	char ft_dest2[40];
+	char dest2[40];
+	ft_memcpy(ft_dest2, src2, 0);	
+	memcpy(dest2, src2, 0);
+	print_errors_string("ft_memcpy",		ft_dest2,		dest2);
+	//
+	char src3[40] = "Le jour se couche";
+	char ft_dest3[40];
+	char dest3[40];
+	ft_memcpy(ft_dest3, src3, 1);	
+	memcpy(dest3, src3, 1);
+	print_errors_string("ft_memcpy",		ft_dest3,		dest3);
+	// printf("ft_memcpy : %s\n", ft_dest); 
+	// printf("memcpy  : %s\n", dest);
+	// printf("ft_memcpy : %s\n", ft_dest2); 
+	// printf("memcpy  : %s\n", dest2);
+	// printf("ft_memcpy : %s\n", ft_dest3); 
+	// printf("memcpy  : %s\n", dest3);
 
 	// Total of errors in tests
 	printf("%d errors in tests.\n", error_count);
