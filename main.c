@@ -289,6 +289,10 @@ int	main(void)
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst2);
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst3);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst3);
+
+	// ft_strlcat
+
+
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
