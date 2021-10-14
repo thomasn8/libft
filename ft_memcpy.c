@@ -6,11 +6,21 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 00:08:07 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/14 01:05:05 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 12:54:24 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
+
+// To obtain all the copy in dest in case of OVERLAP (pas que src soit ecrase avant la copie) :
+//
+// si dest_ptr > src_ptr		==>		copy from front to back
+// [---- src ----]
+//         [---- dst ---]
+//
+// si src_ptr > dest_ptr		==>		copy from back to front
+// [---- dst ----]
+//         [---- src ---]
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -25,21 +35,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*
-The memcpy() function copies n bytes 
-from memory area src 
-to memory area dest.  
-
-The memory areas must not overlap.  									!!!! COMMENT SAVOIR !!!!?
-Use memmove(3) if the memory areas do overlap.
-
-The memcpy() function returns a pointer to dest.
-*/
-
-/*
-The memmove() function copies n bytes from memory area src to
-memory area dest.  The memory areas may overlap: copying takes
-place as though the bytes in src are first copied into a
-temporary array that does not overlap src or dest, 						!!!! COMMENT FAIRE !!!!?
-and the bytes are then copied from the temporary array to dest.
-*/
+// explainations :
+// https://stackoverflow.com/questions/1201319/what-is-the-difference-between-memmove-and-memcpy

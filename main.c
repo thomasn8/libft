@@ -24,14 +24,30 @@
 #include <string.h>
 
 // test function
-static int error_count = 0;		//global variable to get total of errors at the end of the tests
+static int error_count = 0;		// global variable to get total of errors at the end of the tests
 static int test_index = 1;
+
+void	defaut_color(void)
+{
+	printf("\033[0m");
+} 
+void	red_color(void)
+{
+	printf("\033[0;31m");
+}
+void	green_color(void)
+{
+	printf("\033[0;32m");
+}
+
 int		print_errors(char *function_name, int ft_function, int c_function)
 {
 	test_index++;
 	if (ft_function != c_function)
-	{
+	{	
+		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
 		printf("ft_function : %d\nC_function :  %d\n\n", ft_function, c_function);
 		error_count++;
 		return(1);
@@ -44,7 +60,9 @@ int		print_errors_string(char *function_name, char *ft_str, char *c_str)
 	test_index++;
 	if (strcmp(ft_str, c_str) != 0)
 	{
+		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
 		printf("ft_function : %s\nC_function :  %s\n\n", ft_str, c_str);
 		error_count++;
 		return(1);
@@ -55,8 +73,10 @@ int		print_errors_string(char *function_name, char *ft_str, char *c_str)
 
 int	main(void)
 {
-	// Makefile test : 
+	// Makefile test :
+	green_color(); 
 	printf("\nMakefile is okay\n\n");
+	defaut_color();
 	//////////////////////////////////////////////////////////////////
 
 	// #include <ctype.h> ////////////////////////////////////////////
@@ -160,25 +180,25 @@ int	main(void)
 
 	// ft_memcpy
 	char src[40] = "Hello World ! Je suis ton père";
-	char ft_dest[40];
-	char dest[40];
+	char ft_dest[40] = {0};
+	char dest[40] = {0};
 	ft_memcpy(ft_dest, src, 5);	
 	memcpy(dest, src, 5);
 	print_errors_string("ft_memcpy",		ft_dest,		dest);
 	//
 	char src2[40] = "Le jour se lève";
-	char ft_dest2[40];
-	char dest2[40];
+	char ft_dest2[40] = {0};
+	char dest2[40] = {0};
 	ft_memcpy(ft_dest2, src2, 0);	
 	memcpy(dest2, src2, 0);
 	print_errors_string("ft_memcpy",		ft_dest2,		dest2);
 	//
 	char src3[40] = "Le jour se couche";
-	char ft_dest3[40];
-	char dest3[40];
+	char ft_dest3[40] = {0};												// init avec des = {0} ??
+	char dest3[40] = {0};
 	ft_memcpy(ft_dest3, src3, 1);	
 	memcpy(dest3, src3, 1);
-	print_errors_string("ft_memcpy",		ft_dest3,		dest3);
+	print_errors_string("ft_memcpy",		ft_dest3,		dest3);			// ERROR ??
 	// printf("ft_memcpy : %s\n", ft_dest); 
 	// printf("memcpy  : %s\n", dest);
 	// printf("ft_memcpy : %s\n", ft_dest2); 
@@ -186,11 +206,29 @@ int	main(void)
 	// printf("ft_memcpy : %s\n", ft_dest3); 
 	// printf("memcpy  : %s\n", dest3);
 
+	char src_0[] = "foo-bar";
+	char dest_a[] = "foo-bar";
+	char dest_b[] = "foo-bar";
+	char dest_c[] = "foo-bar";
+	char dest_d[] = "foo-bar";
+	memcpy(&dest_a[3],&src_0[4],4);			// might blow up
+	printf("    memcpy :	%s\n", dest_a);
+	ft_memcpy(&dest_b[3],&src_0[4],4);		// ?
+	printf(" ft_memcpy :	%s\n", dest_b);
+	memmove(&dest_c[3],&src_0[4],4);		// fine
+	printf("   memmove :	%s\n", dest_c);
+	ft_memmove(&dest_d[3],&src_0[4],4);		// ?
+	printf("ft_memmove :	%s\n", dest_d);
+
+
+
 	// ft_memmove
 	
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
+	error_count > 0 ? red_color() : green_color();
 	printf("%d errors in tests.\n", error_count);
+	defaut_color();
 	return (0);
 }
