@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 01:11:21 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/14 12:55:04 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 15:48:24 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,7 @@ void 	*ft_memmove(void *dest, const void *src, size_t n)
 	ptr = src;
 	temp = dest;
 	copy_length = n;
-
-	printf("%d\n",&dest);
-	printf("%d\n",&src);
-	
-	if (&dest > &src)
+	if (dest > src)
 	{
 		while(n--)
 			temp[n] = ptr[n];			// copy from front to back

@@ -193,12 +193,12 @@ int	main(void)
 	memcpy(dest2, src2, 0);
 	print_errors_string("ft_memcpy",		ft_dest2,		dest2);
 	//
-	char src3[40] = "Le jour se couche";
-	char ft_dest3[40] = {0};												// init avec des = {0} ??
+	char src3[40] = "Le jour se lève";
+	char ft_dest3[40] = {0};
 	char dest3[40] = {0};
 	ft_memcpy(ft_dest3, src3, 1);	
 	memcpy(dest3, src3, 1);
-	print_errors_string("ft_memcpy",		ft_dest3,		dest3);			// ERROR ??
+	print_errors_string("ft_memcpy",		ft_dest3,		dest3);
 	// printf("ft_memcpy : %s\n", ft_dest); 
 	// printf("memcpy  : %s\n", dest);
 	// printf("ft_memcpy : %s\n", ft_dest2); 
@@ -206,24 +206,37 @@ int	main(void)
 	// printf("ft_memcpy : %s\n", ft_dest3); 
 	// printf("memcpy  : %s\n", dest3);
 
-	char src_0[] = "foo-bar";
-	char dest_a[] = "foo-bar";
-	char dest_b[] = "foo-bar";
-	char dest_c[] = "foo-bar";
-	char dest_d[] = "foo-bar";
-	memcpy(&dest_a[3],&src_0[4],4);			// might blow up
-	printf("    memcpy :	%s\n", dest_a);
-	ft_memcpy(&dest_b[3],&src_0[4],4);		// ?
-	printf(" ft_memcpy :	%s\n", dest_b);
-	memmove(&dest_c[3],&src_0[4],4);		// fine
-	printf("   memmove :	%s\n", dest_c);
-	ft_memmove(&dest_d[3],&src_0[4],4);		// ?
-	printf("ft_memmove :	%s\n", dest_d);
-
-
-
 	// ft_memmove
-	
+	char src4[20] = "Le jour se couche";
+	char ft_dest4[20] = {0};
+	char dest4[20] = {0};
+	ft_memmove(ft_dest4, src4, 14);
+	memmove(dest4, src4, 14);
+	print_errors_string("ft_memmove",		ft_dest4,		dest4);
+	//
+	char src5[15] = "Hello World !";
+	char ft_dest5[15] = {0};
+	char dest5[15] = {0};
+	ft_memmove(ft_dest5, src5, 1);
+	memmove(dest5, src5, 1);
+	print_errors_string("ft_memmove",		ft_dest5,		dest5);
+	//
+	char src6[15] = "Hello World !";
+	char ft_dest6[15] = {0};
+	char dest6[15] = {0};
+	ft_memmove(ft_dest6, src6, 1);
+	memmove(dest6, src6, 1);
+	print_errors_string("ft_memmove",		ft_dest6,		dest6);
+	//
+	// printf("Src : %s\n", src4);
+	// printf("ft_memmove : %s\n", ft_dest4);
+	// printf("memmove : %s\n", dest4);
+	// printf("Src : %s\n", src5);
+	// printf("ft_memmove : %s\n", ft_dest5);
+	// printf("memmove : %s\n", dest5);
+	// printf("Src : %s\n", src6);
+	// printf("ft_memmove : %s\n", ft_dest6);
+	// printf("memmove : %s\n", dest6);
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
