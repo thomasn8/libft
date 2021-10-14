@@ -194,102 +194,101 @@ int	main(void)
 	// printf("%s\n", str4);
 
 	// ft_memcpy
-	char src[40] = "Hello World ! Je suis ton père";
-	char ft_dest[40] = {0};
-	char dest[40] = {0};
-	ft_memcpy(ft_dest, src, 5);	
-	memcpy(dest, src, 5);
-	print_errors_string("ft_memcpy",		ft_dest,		dest);
+	char ft_memcpy_src1[15] = "Hello World !!";
+	char ft_memcpy_dest1[15] = {0};
+	ft_memcpy(ft_memcpy_dest1+5, ft_memcpy_src1, 1);
+	char c_memcpy_src1[15] = "Hello World !!";
+	char c_memcpy_dest1[15] = {0};
+	memcpy(c_memcpy_dest1+5, c_memcpy_src1, 1);
+	print_errors_string("ft_memcpy",		ft_memcpy_dest1,		c_memcpy_dest1);
 	//
-	char src2[40] = "Le jour se lève";
-	char ft_dest2[40] = {0};
-	char dest2[40] = {0};
-	ft_memcpy(ft_dest2, src2, 0);	
-	memcpy(dest2, src2, 0);
-	print_errors_string("ft_memcpy",		ft_dest2,		dest2);
+	char ft_memcpy_src2[15] = "Hello W\0orld !!";
+	char ft_memcpy_dest2[15] = {0};
+	ft_memcpy(ft_memcpy_dest2+0, ft_memcpy_src2, 14);
+	char c_memcpy_src2[15] = "Hello W\0orld !!";
+	char c_memcpy_dest2[15] = {0};
+	memcpy(c_memcpy_dest2+0, c_memcpy_src2, 14);
+	print_errors_string("ft_memcpy",		ft_memcpy_dest2,		c_memcpy_dest2);
 	//
-	char src3[40] = "Le jour se lève";
-	char ft_dest3[40] = {0};
-	char dest3[40] = {0};
-	ft_memcpy(ft_dest3, src3, 1);	
-	memcpy(dest3, src3, 1);
-	print_errors_string("ft_memcpy",		ft_dest3,		dest3);
-	// printf("ft_memcpy : %s\n", ft_dest); 
-	// printf("memcpy  : %s\n", dest);
-	// printf("ft_memcpy : %s\n", ft_dest2); 
-	// printf("memcpy  : %s\n", dest2);
-	// printf("ft_memcpy : %s\n", ft_dest3); 
-	// printf("memcpy  : %s\n", dest3);
+	char ft_memcpy_src6[15] = "Hello World !!";
+	char ft_memcpy_dest6[15] = {0};
+	ft_memcpy(ft_memcpy_dest6+0, ft_memcpy_src6, 14);
+	char c_memcpy_src6[15] = "Hello World !!";
+	char c_memcpy_dest6[15] = {0};
+	memcpy(c_memcpy_dest6+0, c_memcpy_src6, 14);
+	print_errors_string("ft_memcpy",		ft_memcpy_dest6,		c_memcpy_dest6);
+	//
+	// printf("ft_memcpy : %s\n", ft_memcpy_dest1);
+	// printf("memcpy : %s\n", c_memcpy_dest1);
+	// printf("ft_memcpy : %s\n", ft_memcpy_dest2);
+	// printf("ft_memcpy char : %c\n", ft_memcpy_dest2[11]);
+	// printf("memcpy : %s\n", c_memcpy_dest2);
+	// printf("memcpy char : %c\n", c_memcpy_dest2[11]);
+	// printf("ft_memcpy : %s\n", ft_memcpy_dest6);
+	// printf("memcpy : %s\n", c_memcpy_dest6);
 
 	// ft_memmove
-	char src4[20] = "Le jour se couche";
-	char ft_dest4[20] = {0};
-	char dest4[20] = {0};
-	ft_memmove(ft_dest4, src4, 14);
-	memmove(dest4, src4, 14);
-	print_errors_string("ft_memmove",		ft_dest4,		dest4);
+	char ft_memmove_src1[15] = "Hello World !!";
+	char ft_memmove_dest1[15] = {0};
+	ft_memmove(ft_memmove_dest1+5, ft_memmove_src1, 1);
+	char c_memmove_src1[15] = "Hello World !!";
+	char c_memmove_dest1[15] = {0};
+	memmove(c_memmove_dest1+5, c_memmove_src1, 1);
+	print_errors_string("ft_memmove",		ft_memmove_dest1,		c_memmove_dest1);
 	//
-	char src5[15] = "Hello World !";
-	char ft_dest5[15] = {0};
-	char dest5[15] = {0};
-	ft_memmove(ft_dest5, src5, 1);
-	memmove(dest5, src5, 1);
-	print_errors_string("ft_memmove",		ft_dest5,		dest5);
+	char ft_memmove_src2[15] = "Hello W\0orld !!";
+	char ft_memmove_dest2[15] = {0};
+	ft_memmove(ft_memmove_dest2+0, ft_memmove_src2, 14);
+	char c_memmove_src2[15] = "Hello W\0orld !!";
+	char c_memmove_dest2[15] = {0};
+	memmove(c_memmove_dest2+0, c_memmove_src2, 14);
+	print_errors_string("ft_memmove",		ft_memmove_dest2,		c_memmove_dest2);
 	//
-	char src6[15] = "Hello World !";
-	char ft_dest6[15] = {0};
-	char dest6[15] = {0};
-	ft_memmove(ft_dest6, src6, 1);
-	memmove(dest6, src6, 1);
-	print_errors_string("ft_memmove",		ft_dest6,		dest6);
+	char ft_memmove_src6[15] = "Hello World !!";
+	char ft_memmove_dest6[15] = {0};
+	ft_memmove(ft_memmove_dest6+0, ft_memmove_src6, 14);
+	char c_memmove_src6[15] = "Hello World !!";
+	char c_memmove_dest6[15] = {0};
+	memmove(c_memmove_dest6+0, c_memmove_src6, 14);
+	print_errors_string("ft_memmove",		ft_memmove_dest6,		c_memmove_dest6);
 	//
-	char src7[15] = "Hello \0World !";
-	char ft_dest7[15] = {0};
-	char dest7[15] = {0};
-	ft_memmove(ft_dest7, src7, 14);
-	memmove(dest7, src7, 14);
-	print_errors_string("ft_memmove",		ft_dest7,		dest7);
-	// printf("Src : %s\n", src4);
-	// printf("ft_memmove : %s\n", ft_dest4);
-	// printf("memmove : %s\n", dest4);
-	// printf("Src : %s\n", src5);
-	// printf("ft_memmove : %s\n", ft_dest5);
-	// printf("memmove : %s\n", dest5);
-	// printf("Src : %s\n", src6);
-	// printf("ft_memmove : %s\n", ft_dest6);
-	// printf("memmove : %s\n", dest6);
-	// printf("Src : %s\n", src7);
-	// printf("ft_memmove : %s\n", ft_dest7);
-	// printf("memmove : %s\n", dest7);
-	// printf("memmove : %c\n", dest7[6]);
-	// printf("memmove : %c\n", dest7[7]);
-	// printf("memmove : %c\n", dest7[8]);
+	// printf("ft_memmove : %s\n", ft_memmove_dest1);
+	// printf("memmove : %s\n", c_memmove_dest1);
+	// printf("ft_memmove : %s\n", ft_memmove_dest2);
+	// printf("ft_memmove char : %c\n", ft_memmove_dest2[11]);
+	// printf("memmove : %s\n", c_memmove_dest2);
+	// printf("memmove char : %c\n", c_memmove_dest2[11]);
+	// printf("ft_memmove : %s\n", ft_memmove_dest6);
+	// printf("memmove : %s\n", c_memmove_dest6);
 
 	// ft_strlcpy
-	// char ft_strlcpy_src1[14] = "Hello\0 World";
-	// char ft_strlcpy_dst1[14] = {0};
-	// char c_strlcpy_src1[14] = "Hello\0 World";
-	// char c_strlcpy_dst1[14] = {0};
-	// print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst1, ft_strlcpy_src1, 5),	strlcpy(c_strlcpy_dst1, c_strlcpy_src1, 5));
-	//
-	// char ft_strlcpy_src2[14] = "Hello World !";
-	// char ft_strlcpy_dst2[14] = {0};
-	// char c_strlcpy_src2[14] = "Hello World !";
-	// char c_strlcpy_dst2[14] = {0};
-	// print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst2, ft_strlcpy_src2, 0),	strlcpy(c_strlcpy_dst2, c_strlcpy_src2, 0));
-	//
+	char ft_strlcpy_src1[14] = "Hello\0 World";
+	char ft_strlcpy_dst1[14] = {0};
+	char c_strlcpy_src1[14] = "Hello\0 World";
+	char c_strlcpy_dst1[14] = {0};
+	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst1, ft_strlcpy_src1, 5),	strlcpy(c_strlcpy_dst1, c_strlcpy_src1, 5));
+	print_errors_string("ft_strlcpy",	ft_strlcpy_dst1,	c_strlcpy_dst1);
+	// 
+	char ft_strlcpy_src2[14] = "Hello World !";
+	char ft_strlcpy_dst2[14] = {0};
+	char c_strlcpy_src2[14] = "Hello World !";
+	char c_strlcpy_dst2[14] = {0};
+	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst2, ft_strlcpy_src2, 0),	strlcpy(c_strlcpy_dst2, c_strlcpy_src2, 0));
+	print_errors_string("ft_strlcpy",	ft_strlcpy_dst2,	c_strlcpy_dst2);
+	// 
 	char ft_strlcpy_src3[14] = "Hello World !";
-	char ft_strlcpy_dst3[14] = {0};					// ERROR (on doit mettre un 15 pour nul terminer)
+	char ft_strlcpy_dst3[14] = {0};
 	char c_strlcpy_src3[14] = "Hello World !";
 	char c_strlcpy_dst3[14] = {0};
-	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst3, ft_strlcpy_src3, 13),	strlcpy(c_strlcpy_dst3, c_strlcpy_src3, 13));	// PAS LE MEME COMPORTEMENT entre les fonctions SI dstsize >= taille de dst
+	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst3, ft_strlcpy_src3, 14),	strlcpy(c_strlcpy_dst3, c_strlcpy_src3, 14));
+	print_errors_string("ft_strlcpy",	ft_strlcpy_dst3,	c_strlcpy_dst3);
+	// 
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst1);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst1);
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst2);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst2);
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst3);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst3);
-	// printf("ft_strlcpy_dst1[i] : %c\n", ft_strlcpy_dst3[1]);
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests

@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:14:12 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/14 19:10:21 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 23:02:31 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,41 +19,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	
 	src_length = 0;
 	while (src[src_length])
-		src_length++;
-	i = src_length;
-	dst[dstsize] = 0;
-	if(dstsize)
-		dstsize--;
-	while (i-- && dstsize--)
-	{
-		*dst++ = *src++;
-	}
-	return (src_length);
+		src_length++;				// src_length = length of src string (until 1st \0)
+	i = src_length;					// i = copy of src_length
+	if(dstsize)						// si dst > 0
+		dstsize--;					// dstsize -1 to get last index (due to index 0)	
+	dst[dstsize] = 0;				// put \0 at the end (arbitrary last pos) of dst 
+	while (i-- && dstsize--)		// tant que src string n'est pas terminée && qu'on a pas atteint dstsize
+		*dst++ = *src++;			// copie src dans dst
+	return (src_length);			// retourne la longueur de la string (peu importe dstsize)
 }
 
 // If the src and dst strings overlap, the behavior is undefined.
-
-// recopie toute la chaîne pointée par src vers la destination dest jusqu'à ce qu'elle rencontre le zéro '\0'
-// ne contrôle absolument pas la taille du buffer de destination, et le tout se termine en buffer overflow si jamais ça dépasse
-// prennent la pleine taille du tampon de destination => avec sizeof()
-// dstsize comprend le \0 de fin : chars + 0
-// retourne la taille 
-// exemple : (void)strlcpy(buf, s, sizeof(buf));
-// n est égal à la taille du buffer de destination
-
-/*
-strlcpy() copies up to dstsize - 1 characters from the string src to dst,
-NUL-terminating the result if dstsize is not 0.
-
-strlcpy() et strlcat() prennent la pleine taille du tampon de destination et garantissent la terminaison NUL s'il y a de la place. Notez que la place pour le NUL doit être incluse dans dstsize. 
-
-If the src and dst strings overlap, the behavior is undefined.
-
-strlcpy() and strlcat() functions return the total
-length of the string they tried to create.  For strlcpy() that means the
-length of src.  For strlcat() that means the initial length of dst plus
-the length of src.
-
-If the return value is >= dstsize, the output string has been truncated.
-It is the caller's responsibility to handle this.
-*/
+// If the return value is >= dstsize, the output string has been truncated.
+// It is the caller's responsibility to handle this.
