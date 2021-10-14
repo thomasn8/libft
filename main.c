@@ -70,6 +70,21 @@ int		print_errors_string(char *function_name, char *ft_str, char *c_str)
 	return (0);
 }
 
+int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
+{
+	test_index++;
+	if (ft_str != c_str)
+	{
+		red_color();
+		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
+		printf("ft_function : %zu\nC_function :  %zu\n\n", ft_str, c_str);
+		error_count++;
+		return(1);
+	}
+	return (0);
+}
+
 
 int	main(void)
 {
@@ -228,6 +243,12 @@ int	main(void)
 	memmove(dest6, src6, 1);
 	print_errors_string("ft_memmove",		ft_dest6,		dest6);
 	//
+	char src7[15] = "Hello \0World !";
+	char ft_dest7[15] = {0};
+	char dest7[15] = {0};
+	ft_memmove(ft_dest7, src7, 14);
+	memmove(dest7, src7, 14);
+	print_errors_string("ft_memmove",		ft_dest7,		dest7);
 	// printf("Src : %s\n", src4);
 	// printf("ft_memmove : %s\n", ft_dest4);
 	// printf("memmove : %s\n", dest4);
@@ -237,6 +258,38 @@ int	main(void)
 	// printf("Src : %s\n", src6);
 	// printf("ft_memmove : %s\n", ft_dest6);
 	// printf("memmove : %s\n", dest6);
+	// printf("Src : %s\n", src7);
+	// printf("ft_memmove : %s\n", ft_dest7);
+	// printf("memmove : %s\n", dest7);
+	// printf("memmove : %c\n", dest7[6]);
+	// printf("memmove : %c\n", dest7[7]);
+	// printf("memmove : %c\n", dest7[8]);
+
+	// ft_strlcpy
+	// char ft_strlcpy_src1[14] = "Hello\0 World";
+	// char ft_strlcpy_dst1[14] = {0};
+	// char c_strlcpy_src1[14] = "Hello\0 World";
+	// char c_strlcpy_dst1[14] = {0};
+	// print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst1, ft_strlcpy_src1, 5),	strlcpy(c_strlcpy_dst1, c_strlcpy_src1, 5));
+	//
+	// char ft_strlcpy_src2[14] = "Hello World !";
+	// char ft_strlcpy_dst2[14] = {0};
+	// char c_strlcpy_src2[14] = "Hello World !";
+	// char c_strlcpy_dst2[14] = {0};
+	// print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst2, ft_strlcpy_src2, 0),	strlcpy(c_strlcpy_dst2, c_strlcpy_src2, 0));
+	//
+	char ft_strlcpy_src3[14] = "Hello World !";
+	char ft_strlcpy_dst3[14] = {0};					// ERROR (on doit mettre un 15 pour nul terminer)
+	char c_strlcpy_src3[14] = "Hello World !";
+	char c_strlcpy_dst3[14] = {0};
+	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst3, ft_strlcpy_src3, 13),	strlcpy(c_strlcpy_dst3, c_strlcpy_src3, 13));	// PAS LE MEME COMPORTEMENT entre les fonctions SI dstsize >= taille de dst
+	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst1);
+	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst1);
+	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst2);
+	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst2);
+	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst3);
+	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst3);
+	// printf("ft_strlcpy_dst1[i] : %c\n", ft_strlcpy_dst3[1]);
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
