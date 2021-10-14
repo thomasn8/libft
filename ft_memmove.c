@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 01:11:21 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/14 15:48:24 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/14 16:12:51 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // [---- dst ----]
 //         [---- src ---]
 
-void 	*ft_memmove(void *dest, const void *src, size_t n)
+void 	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	const char	*ptr;
 	char		*temp;
