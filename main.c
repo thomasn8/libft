@@ -85,7 +85,6 @@ int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
 	return (0);
 }
 
-
 int	main(void)
 {
 	// Makefile test :
@@ -291,7 +290,24 @@ int	main(void)
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst3);
 
 	// ft_strlcat
-
+	char ft_strlcat_src1[7] = "WORLD";
+	char ft_strlcat_dst1[20] = "HELLOOO";
+	size_t ft_strlcat_value = 0;
+	printf("ft_strlcat_dst1 (before) : %s\n", ft_strlcat_dst1);
+	ft_strlcat_value = ft_strlcat(ft_strlcat_dst1, ft_strlcat_src1, 10);
+	printf("ft_strlcat_dst1 (after) : %s\n", ft_strlcat_dst1);
+	printf("Return value = %zu\n", ft_strlcat_value);
+	//
+	char c_strlcat_src1[7] = "WORLD";			// src  length = 6
+	char c_strlcat_dst1[20] = "HELLOOO";		// dest length = 8
+	size_t c_strlcat_value = 0;
+	printf("c_strlcat_dst1 (before): %s\n", c_strlcat_dst1);
+	c_strlcat_value = strlcat(c_strlcat_dst1, c_strlcat_src1, 10);
+	printf("c_strlcat_dst1 (after): %s\n", c_strlcat_dst1);
+	printf("Return value = %zu\n", c_strlcat_value);
+	//
+	focus_on_backslash_zero(ft_strlcat_dst1, 20);
+	focus_on_backslash_zero(c_strlcat_dst1, 20);
 
 	//////////////////////////////////////////////////////////////////
 
