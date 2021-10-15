@@ -521,24 +521,26 @@ int	main(void)
 	// printf("Ptr : %p\n", ptr);
 
 	// ft_strrchr
-	char abc[4] = "abc\0";
-	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'a'),	strrchr(abc, 'a'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'b'),	strrchr(abc, 'b'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'c'),	strrchr(abc, 'c'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 0),		strrchr(abc, 0));
+	char strrchr1[50] = "J'aime le tofu bien grillé.\n\0";
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, '.'),	strrchr(strrchr1, '.'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, 'e'),	strrchr(strrchr1, 'e'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, ' '),	strrchr(strrchr1, ' '));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, '\n'),	strrchr(strrchr1, '\n'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, 'w'),	strrchr(strrchr1, 'w'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr1, 0),	strrchr(strrchr1, 0));
 	//
-	char phrase[50] = "J'aime le tofu bien grillé.\n\0";
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, '.'),	strrchr(phrase, '.'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 'e'),	strrchr(phrase, 'e'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, ' '),	strrchr(phrase, ' '));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, '\n'),	strrchr(phrase, '\n'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 'w'),	strrchr(phrase, 'w'));
-	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 0),		strrchr(phrase, 0));
+	char strrchr2[50] = "J'aime le tofu\0 bien grillé.\n\0";
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, '.'),	strrchr(strrchr2, '.'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, 'e'),	strrchr(strrchr2, 'e'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, ' '),	strrchr(strrchr2, ' '));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, '\n'),	strrchr(strrchr2, '\n'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, 'w'),	strrchr(strrchr2, 'w'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(strrchr2, 0),	strrchr(strrchr2, 0));
 	//
 	// char *ptr;
-	// char abc[4] = "abc\0";
-	// printf("Ptr : %p\n", abc);
-	// ptr = ft_strrchr(abc, 0);
+	// char strrchr1[20] = "abcdefgh\0ijk";
+	// printf("Ptr : %p\n", strrchr1);
+	// ptr = ft_strrchr(strrchr1, 'g');
 	// printf("Ptr : %p\n", ptr);
 
 	//////////////////////////////////////////////////////////////////
