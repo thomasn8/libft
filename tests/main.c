@@ -8,14 +8,15 @@
 // 2.				gcc -Wall -Wextra -Werror main.c -L. -lft && ./a.out
 // 2.5 (optional) 	ar -t libft.a 		(display the modules/functions)
 // OR,	one command :
-// make re && gcc -Wall -Wextra -Werror main.c -L. -lft && ./a.out
+// make re && gcc -Wall -Wextra -Werror tests/main.c -L. -lft && ./a.out
 
 // libft.h
-#include "libft.h"
+#include "../libft.h"
 
 // lib for printf() and write()
 #include <stdio.h>
 #include <unistd.h>
+#include "focuson_backslash_zero.c"
 
 // lib for isalpha() and equivalents
 #include <ctype.h>
@@ -401,16 +402,16 @@ int	main(void)
 	print_errors_size("ft_strlcat",	ft_strlcat_value5,	c_strlcat_value5);
 	print_errors_string("ft_strlcat",	ft_strlcat_dst5,	c_strlcat_dst5);
 	/////////6
-	char ft_strlcat_src6[50] = "Tom AND ";
-	char ft_strlcat_dst6[50] = "Jerry";
+	char ft_strlcat_src6[50] = "Jerry";
+	char ft_strlcat_dst6[50] = "Tom AND ";
 	size_t ft_strlcat_value6 = 0;
 	// printf("ft_strlcat_dst6 (before) : %s\n", ft_strlcat_dst6);
 	ft_strlcat_value6 = ft_strlcat(ft_strlcat_dst6, ft_strlcat_src6, 30);
 	// printf("ft_strlcat_dst6 (after) : %s\n", ft_strlcat_dst6);
 	// printf("Return value = %zu\n", ft_strlcat_value6);
 	//
-	char c_strlcat_src6[50] = "Tom AND ";
-	char c_strlcat_dst6[50] = "Jerry";
+	char c_strlcat_src6[50] = "Jerry";
+	char c_strlcat_dst6[50] = "Tom AND ";
 	size_t c_strlcat_value6 = 0;
 	// printf("c_strlcat_dst6 (before): %s\n", c_strlcat_dst6);
 	c_strlcat_value6 = strlcat(c_strlcat_dst6, c_strlcat_src6, 30);
@@ -423,23 +424,23 @@ int	main(void)
 	print_errors_size("ft_strlcat",	ft_strlcat_value6,	c_strlcat_value6);
 	print_errors_string("ft_strlcat",	ft_strlcat_dst6,	c_strlcat_dst6);
 	/////////7
-	char ft_strlcat_src7[50] = "Tom AND ";
-	char ft_strlcat_dst7[50] = "";
+	char ft_strlcat_src7[50] = "";
+	char ft_strlcat_dst7[50] = "Tom AND ";
 	size_t ft_strlcat_value7 = 0;
 	ft_strlcat_value7 = ft_strlcat(ft_strlcat_dst7, ft_strlcat_src7, 30);
-	char c_strlcat_src7[50] = "Tom AND ";
-	char c_strlcat_dst7[50] = "";
+	char c_strlcat_src7[50] = "";
+	char c_strlcat_dst7[50] = "Tom AND ";
 	size_t c_strlcat_value7 = 0;
 	c_strlcat_value7 = strlcat(c_strlcat_dst7, c_strlcat_src7, 30);
 	print_errors_size("ft_strlcat",	ft_strlcat_value7,	c_strlcat_value7);
 	print_errors_string("ft_strlcat",	ft_strlcat_dst7,	c_strlcat_dst7);
 	/////////8
-	char ft_strlcat_src8[50] = "";
-	char ft_strlcat_dst8[50] = "Jerry";
+	char ft_strlcat_src8[50] = "Jerry";
+	char ft_strlcat_dst8[50] = "";
 	size_t ft_strlcat_value8 = 0;
 	ft_strlcat_value8 = ft_strlcat(ft_strlcat_dst8, ft_strlcat_src8, 30);
-	char c_strlcat_src8[50] = "";
-	char c_strlcat_dst8[50] = "Jerry";
+	char c_strlcat_src8[50] = "Jerry";
+	char c_strlcat_dst8[50] = "";
 	size_t c_strlcat_value8 = 0;
 	c_strlcat_value8 = strlcat(c_strlcat_dst8, c_strlcat_src8, 30);
 	print_errors_size("ft_strlcat",	ft_strlcat_value8,	c_strlcat_value8);

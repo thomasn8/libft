@@ -1,5 +1,4 @@
-SRCS	= ft_replace_backslashzero.c \
-		  ft_isalpha.c	\
+SRCS	= ft_isalpha.c	\
 		  ft_isdigit.c	\
 		  ft_isalnum.c \
 		  ft_isascii.c \

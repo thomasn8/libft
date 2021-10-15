@@ -6,11 +6,10 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:04:01 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 13:25:05 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:28:19 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
 #include <stdio.h>
 
 int	focus_on_backslash_zero(char *string, size_t limit)

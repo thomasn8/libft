@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 11:21:53 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/15 14:28:09 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 
 # include <stddef.h>
-
-int		focus_on_backslash_zero(char *string, int limit);
 
 int		ft_isalpha(int c);
 
