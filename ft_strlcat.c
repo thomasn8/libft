@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:14:15 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 14:09:17 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/15 18:39:01 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	int 	i;
+	int		i;
 	int		n;
-	size_t 	src_length;
-	size_t 	dst_length;
+	size_t	src_length;
+	size_t	dst_length;
 	int		src_length_cpy;
-	
+
 	src_length = 0;
 	while (src[src_length])
 		src_length++;
