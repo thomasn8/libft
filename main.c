@@ -289,25 +289,172 @@ int	main(void)
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst3);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst3);
 
-	// ft_strlcat
+	// ft_strlcat	(VALEUR DE RETOUR ABSURDE....)
+	/////////1
 	char ft_strlcat_src1[7] = "WORLD";
 	char ft_strlcat_dst1[20] = "HELLOOO";
-	size_t ft_strlcat_value = 0;
-	printf("ft_strlcat_dst1 (before) : %s\n", ft_strlcat_dst1);
-	ft_strlcat_value = ft_strlcat(ft_strlcat_dst1, ft_strlcat_src1, 10);
-	printf("ft_strlcat_dst1 (after) : %s\n", ft_strlcat_dst1);
-	printf("Return value = %zu\n", ft_strlcat_value);
+	size_t ft_strlcat_value1 = 0;
+	// printf("ft_strlcat_dst1 (before) : %s\n", ft_strlcat_dst1);
+	ft_strlcat_value1 = ft_strlcat(ft_strlcat_dst1, ft_strlcat_src1, 0);
+	// printf("ft_strlcat_dst1 (after) : %s\n", ft_strlcat_dst1);
+	// printf("Return value = %zu\n", ft_strlcat_value1);
 	//
-	char c_strlcat_src1[7] = "WORLD";			// src  length = 6
-	char c_strlcat_dst1[20] = "HELLOOO";		// dest length = 8
-	size_t c_strlcat_value = 0;
-	printf("c_strlcat_dst1 (before): %s\n", c_strlcat_dst1);
-	c_strlcat_value = strlcat(c_strlcat_dst1, c_strlcat_src1, 10);
-	printf("c_strlcat_dst1 (after): %s\n", c_strlcat_dst1);
-	printf("Return value = %zu\n", c_strlcat_value);
+	char c_strlcat_src1[7] = "WORLD";
+	char c_strlcat_dst1[20] = "HELLOOO";
+	size_t c_strlcat_value1 = 0;
+	// printf("c_strlcat_dst1 (before): %s\n", c_strlcat_dst1);
+	c_strlcat_value1 = strlcat(c_strlcat_dst1, c_strlcat_src1, 0);
+	// printf("c_strlcat_dst1 (after): %s\n", c_strlcat_dst1);
+	// printf("Return value = %zu\n", c_strlcat_value1);
 	//
-	focus_on_backslash_zero(ft_strlcat_dst1, 20);
-	focus_on_backslash_zero(c_strlcat_dst1, 20);
+	// 	focus_on_backslash_zero(ft_strlcat_dst1, 20);
+	// focus_on_backslash_zero(c_strlcat_dst1, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value1,	c_strlcat_value1);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst1,	c_strlcat_dst1);
+	/////////2
+	char ft_strlcat_src2[7] = "WORLD";
+	char ft_strlcat_dst2[20] = "HELLOOO";
+	size_t ft_strlcat_value2 = 0;
+	// printf("ft_strlcat_dst2 (before) : %s\n", ft_strlcat_dst2);
+	ft_strlcat_value2 = ft_strlcat(ft_strlcat_dst2, ft_strlcat_src2, 1);
+	// printf("ft_strlcat_dst2 (after) : %s\n", ft_strlcat_dst2);
+	// printf("Return value = %zu\n", ft_strlcat_value2);
+	//
+	char c_strlcat_src2[7] = "WORLD";
+	char c_strlcat_dst2[20] = "HELLOOO";
+	size_t c_strlcat_value2 = 0;
+	// printf("c_strlcat_dst1 (before): %s\n", c_strlcat_dst2);
+	c_strlcat_value2 = strlcat(c_strlcat_dst2, c_strlcat_src2, 1);
+	// printf("c_strlcat_dst1 (after): %s\n", c_strlcat_dst2);
+	// printf("Return value = %zu\n", c_strlcat_value2);
+	//
+	// focus_on_backslash_zero(ft_strlcat_dst2, 20);
+	// focus_on_backslash_zero(c_strlcat_dst2, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value2,	c_strlcat_value2);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst2,	c_strlcat_dst2);
+	/////////3
+	char ft_strlcat_src3[7] = "WORLD";
+	char ft_strlcat_dst3[20] = "HELLOOO";
+	size_t ft_strlcat_value3 = 0;
+	// printf("ft_strlcat_dst3 (before) : %s\n", ft_strlcat_dst3);
+	ft_strlcat_value3 = ft_strlcat(ft_strlcat_dst1, ft_strlcat_src3, 5);
+	// printf("ft_strlcat_dst3 (after) : %s\n", ft_strlcat_dst3);
+	// printf("Return value = %zu\n", ft_strlcat_value3);
+	//
+	char c_strlcat_src3[7] = "WORLD";
+	char c_strlcat_dst3[20] = "HELLOOO";
+	size_t c_strlcat_value3 = 0;
+	// printf("c_strlcat_dst1 (before): %s\n", c_strlcat_dst3);
+	c_strlcat_value3 = strlcat(c_strlcat_dst3, c_strlcat_src3, 5);
+	// printf("c_strlcat_dst3 (after): %s\n", c_strlcat_dst3);
+	// printf("Return value = %zu\n", c_strlcat_value3);
+	//
+	// focus_on_backslash_zero(ft_strlcat_dst3, 20);
+	// focus_on_backslash_zero(c_strlcat_dst3, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value3,	c_strlcat_value3);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst3,	c_strlcat_dst3);
+	/////////4
+	char ft_strlcat_src4[7] = "WORLD";
+	char ft_strlcat_dst4[20] = "HELLOOO";
+	size_t ft_strlcat_value4 = 0;
+	// printf("ft_strlcat_dst4 (before) : %s\n", ft_strlcat_dst4);
+	ft_strlcat_value4 = ft_strlcat(ft_strlcat_dst4, ft_strlcat_src4, 10);
+	// printf("ft_strlcat_dst4 (after) : %s\n", ft_strlcat_dst4);
+	// printf("Return value = %zu\n", ft_strlcat_value4);
+	//
+	char c_strlcat_src4[7] = "WORLD";
+	char c_strlcat_dst4[20] = "HELLOOO";
+	size_t c_strlcat_value4 = 0;
+	// printf("c_strlcat_dst4 (before): %s\n", c_strlcat_dst4);
+	c_strlcat_value4 = strlcat(c_strlcat_dst4, c_strlcat_src4, 10);
+	// printf("c_strlcat_dst4 (after): %s\n", c_strlcat_dst4);
+	// printf("Return value = %zu\n", c_strlcat_value4);
+	//
+	// focus_on_backslash_zero(ft_strlcat_dst4, 20);
+	// focus_on_backslash_zero(c_strlcat_dst4, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value4,	c_strlcat_value4);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst4,	c_strlcat_dst4);
+	/////////5
+	char ft_strlcat_src5[7] = "WORLD";
+	char ft_strlcat_dst5[20] = "HELLOOO";
+	size_t ft_strlcat_value5 = 0;
+	// printf("ft_strlcat_dst5 (before) : %s\n", ft_strlcat_dst5);
+	ft_strlcat_value5 = ft_strlcat(ft_strlcat_dst5, ft_strlcat_src5, 15);
+	// printf("ft_strlcat_dst5 (after) : %s\n", ft_strlcat_dst5);
+	// printf("Return value = %zu\n", ft_strlcat_value5);
+	//
+	char c_strlcat_src5[7] = "WORLD";
+	char c_strlcat_dst5[20] = "HELLOOO";
+	size_t c_strlcat_value5 = 0;
+	// printf("c_strlcat_dst5 (before): %s\n", c_strlcat_dst5);
+	c_strlcat_value5 = strlcat(c_strlcat_dst5, c_strlcat_src5, 15);
+	// printf("c_strlcat_dst5 (after): %s\n", c_strlcat_dst5);
+	// printf("Return value = %zu\n", c_strlcat_value5);
+	//
+	// focus_on_backslash_zero(ft_strlcat_dst5, 20);
+	// focus_on_backslash_zero(c_strlcat_dst5, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value5,	c_strlcat_value5);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst5,	c_strlcat_dst5);
+	/////////6
+	char ft_strlcat_src6[50] = "Tom AND ";
+	char ft_strlcat_dst6[50] = "Jerry";
+	size_t ft_strlcat_value6 = 0;
+	// printf("ft_strlcat_dst6 (before) : %s\n", ft_strlcat_dst6);
+	ft_strlcat_value6 = ft_strlcat(ft_strlcat_dst6, ft_strlcat_src6, 30);
+	// printf("ft_strlcat_dst6 (after) : %s\n", ft_strlcat_dst6);
+	// printf("Return value = %zu\n", ft_strlcat_value6);
+	//
+	char c_strlcat_src6[50] = "Tom AND ";
+	char c_strlcat_dst6[50] = "Jerry";
+	size_t c_strlcat_value6 = 0;
+	// printf("c_strlcat_dst6 (before): %s\n", c_strlcat_dst6);
+	c_strlcat_value6 = strlcat(c_strlcat_dst6, c_strlcat_src6, 30);
+	// printf("c_strlcat_dst6 (after): %s\n", c_strlcat_dst6);
+	// printf("Return value = %zu\n", c_strlcat_value6);
+	//
+	// focus_on_backslash_zero(ft_strlcat_dst6, 20);
+	// focus_on_backslash_zero(c_strlcat_dst6, 20);
+	//
+	print_errors_size("ft_strlcat",	ft_strlcat_value6,	c_strlcat_value6);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst6,	c_strlcat_dst6);
+	/////////7
+	char ft_strlcat_src7[50] = "Tom AND ";
+	char ft_strlcat_dst7[50] = "";
+	size_t ft_strlcat_value7 = 0;
+	ft_strlcat_value7 = ft_strlcat(ft_strlcat_dst7, ft_strlcat_src7, 30);
+	char c_strlcat_src7[50] = "Tom AND ";
+	char c_strlcat_dst7[50] = "";
+	size_t c_strlcat_value7 = 0;
+	c_strlcat_value7 = strlcat(c_strlcat_dst7, c_strlcat_src7, 30);
+	print_errors_size("ft_strlcat",	ft_strlcat_value7,	c_strlcat_value7);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst7,	c_strlcat_dst7);
+	/////////8
+	char ft_strlcat_src8[50] = "";
+	char ft_strlcat_dst8[50] = "Jerry";
+	size_t ft_strlcat_value8 = 0;
+	ft_strlcat_value8 = ft_strlcat(ft_strlcat_dst8, ft_strlcat_src8, 30);
+	char c_strlcat_src8[50] = "";
+	char c_strlcat_dst8[50] = "Jerry";
+	size_t c_strlcat_value8 = 0;
+	c_strlcat_value8 = strlcat(c_strlcat_dst8, c_strlcat_src8, 30);
+	print_errors_size("ft_strlcat",	ft_strlcat_value8,	c_strlcat_value8);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst8,	c_strlcat_dst8);
+	/////////9
+	char ft_strlcat_src9[50] = "";
+	char ft_strlcat_dst9[50] = "";
+	size_t ft_strlcat_value9 = 0;
+	ft_strlcat_value9 = ft_strlcat(ft_strlcat_dst9, ft_strlcat_src9, 30);
+	char c_strlcat_src9[50] = "";
+	char c_strlcat_dst9[50] = "";
+	size_t c_strlcat_value9 = 0;
+	c_strlcat_value9 = strlcat(c_strlcat_dst9, c_strlcat_src9, 30);
+	print_errors_size("ft_strlcat",	ft_strlcat_value9,	c_strlcat_value9);
+	print_errors_string("ft_strlcat",	ft_strlcat_dst9,	c_strlcat_dst9);
 
 	//////////////////////////////////////////////////////////////////
 
