@@ -71,6 +71,21 @@ int		print_errors_string(char *function_name, char *ft_str, char *c_str)
 	return (0);
 }
 
+int		print_errors_pointer(char *function_name, char *ft_str, char *c_str)
+{
+	test_index++;
+	if (ft_str != c_str)
+	{
+		red_color();
+		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
+		printf("ft_function : %p\nC_function :  %p\n\n", ft_str, c_str);
+		error_count++;
+		return(1);
+	}
+	return (0);
+}
+
 int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
 {
 	test_index++;
@@ -150,6 +165,31 @@ int	main(void)
 	print_errors("ft_isprint",		ft_isprint(0x7c),	isprint(0x7c));
 	print_errors("ft_isprint",		ft_isprint(0x80),	isprint(0x80));
 	print_errors("ft_isprint",		ft_isprint(0),		isprint(0));
+
+	// ft_toupper
+	print_errors("ft_toupper",		ft_toupper('c'),	toupper('c'));
+	print_errors("ft_toupper",		ft_toupper('?'),	toupper('?'));
+	print_errors("ft_toupper",		ft_toupper('Z'),	toupper('Z'));
+	print_errors("ft_toupper",		ft_toupper(2),		toupper(2));
+	print_errors("ft_toupper",		ft_toupper('9'),	toupper('9'));
+	print_errors("ft_toupper",		ft_toupper(99),		toupper(99));
+	print_errors("ft_toupper",		ft_toupper(' '),	toupper(' '));
+	print_errors("ft_toupper",		ft_toupper('\n'),	toupper('\n'));
+	print_errors("ft_toupper",		ft_toupper(0x81),	toupper(0x81));
+	print_errors("ft_toupper",		ft_toupper(0),		toupper(0));
+
+	// ft_tolower
+	print_errors("ft_tolower",		ft_tolower('c'),	tolower('c'));
+	print_errors("ft_tolower",		ft_tolower('?'),	tolower('?'));
+	print_errors("ft_tolower",		ft_tolower('Z'),	tolower('Z'));
+	print_errors("ft_tolower",		ft_tolower(2),		tolower(2));
+	print_errors("ft_tolower",		ft_tolower('9'),	tolower('9'));
+	print_errors("ft_tolower",		ft_tolower(99),		tolower(99));
+	print_errors("ft_tolower",		ft_tolower(' '),	tolower(' '));
+	print_errors("ft_tolower",		ft_tolower('\n'),	tolower('\n'));
+	print_errors("ft_tolower",		ft_tolower(0x81),	tolower(0x81));
+	print_errors("ft_tolower",		ft_tolower(0),		tolower(0));
+
 	//////////////////////////////////////////////////////////////////
 
 	// #include <string.h>////////////////////////////////////////////
@@ -456,6 +496,50 @@ int	main(void)
 	c_strlcat_value9 = strlcat(c_strlcat_dst9, c_strlcat_src9, 30);
 	print_errors_size("ft_strlcat",	ft_strlcat_value9,	c_strlcat_value9);
 	print_errors_string("ft_strlcat",	ft_strlcat_dst9,	c_strlcat_dst9);
+
+	//////////////////////////////////////////////////////////////////
+
+	// ft_strchr
+	char abc[4] = "abc\0";
+	print_errors_pointer("ft_strchr",	ft_strchr(abc, 'a'),	strchr(abc, 'a'));
+	print_errors_pointer("ft_strchr",	ft_strchr(abc, 'b'),	strchr(abc, 'b'));
+	print_errors_pointer("ft_strchr",	ft_strchr(abc, 'c'),	strchr(abc, 'c'));
+	print_errors_pointer("ft_strchr",	ft_strchr(abc, 0),		strchr(abc, 0));
+	//
+	char phrase[50] = "J'aime le tofu bien grillé.\n\0";
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, '.'),	strchr(phrase, '.'));
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, 'e'),	strchr(phrase, 'e'));
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, ' '),	strchr(phrase, ' '));
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, '\n'),	strchr(phrase, '\n'));
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, 'w'),	strchr(phrase, 'w'));
+	print_errors_pointer("ft_strchr",	ft_strchr(phrase, 0),		strchr(phrase, 0));
+	//
+	// char *ptr;
+	// char abc[4] = "abc\0";
+	// printf("Ptr : %p\n", abc);
+	// ptr = ft_strchr(abc, 0);
+	// printf("Ptr : %p\n", ptr);
+
+	// ft_strrchr
+	char abc[4] = "abc\0";
+	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'a'),	strrchr(abc, 'a'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'b'),	strrchr(abc, 'b'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 'c'),	strrchr(abc, 'c'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(abc, 0),		strrchr(abc, 0));
+	//
+	char phrase[50] = "J'aime le tofu bien grillé.\n\0";
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, '.'),	strrchr(phrase, '.'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 'e'),	strrchr(phrase, 'e'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, ' '),	strrchr(phrase, ' '));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, '\n'),	strrchr(phrase, '\n'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 'w'),	strrchr(phrase, 'w'));
+	print_errors_pointer("ft_strrchr",	ft_strrchr(phrase, 0),		strrchr(phrase, 0));
+	//
+	// char *ptr;
+	// char abc[4] = "abc\0";
+	// printf("Ptr : %p\n", abc);
+	// ptr = ft_strrchr(abc, 0);
+	// printf("Ptr : %p\n", ptr);
 
 	//////////////////////////////////////////////////////////////////
 
