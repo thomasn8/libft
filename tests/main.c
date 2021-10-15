@@ -543,6 +543,46 @@ int	main(void)
 	// ptr = ft_strrchr(strrchr1, 'g');
 	// printf("Ptr : %p\n", ptr);
 
+	// ft_strncmp
+	char strncmp1[50] = "J'aime le tofu\0";
+	char strncmp2[50] = "J'aime le poulet\0";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp1, strncmp2, 50),	strncmp(strncmp1, strncmp2, 50));
+	print_errors("ft_strncmp",	ft_strncmp(strncmp1, strncmp2, 0),	strncmp(strncmp1, strncmp2, 0));
+	
+	char strncmp3[50] = "J'ai\0me le tofu\0";
+	char strncmp4[50] = "J'aime le poulet\0";
+	ft_strncmp(strncmp3, strncmp4, 50);
+	print_errors("ft_strncmp",	ft_strncmp(strncmp3, strncmp4, 50),	strncmp(strncmp3, strncmp4, 50));
+	print_errors("ft_strncmp",	ft_strncmp(strncmp3, strncmp4, 10),	strncmp(strncmp3, strncmp4, 10));
+
+	char strncmp5[50] = "J'aime le tofu\0";
+	char strncmp6[50] = "J'aimais le poulet\0";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp5, strncmp6, 50),	strncmp(strncmp5, strncmp6, 50));
+	print_errors("ft_strncmp",	ft_strncmp(strncmp5, strncmp6, 10),	strncmp(strncmp5, strncmp6, 10));
+
+	char strncmp7[50] = "1234567890";
+	char strncmp8[50] = "1234567890";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp7, strncmp8, 50),	strncmp(strncmp7, strncmp8, 50));
+
+	char strncmp9[50] = "123467890";
+	char strncmp10[50] = "1234567890";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp9, strncmp10, 50),	strncmp(strncmp9, strncmp10, 50));
+
+	char strncmp11[50] = "?123467890";
+	char strncmp12[50] = "1234567890";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp11, strncmp12, 50),	strncmp(strncmp11, strncmp12, 50));
+
+	char strncmp13[50] = "1234567890";
+	char strncmp14[50] = "1234567890?";
+	print_errors("ft_strncmp",	ft_strncmp(strncmp13, strncmp14, 50),	strncmp(strncmp13, strncmp14, 50));
+
+	// char strncmp1[50] = "J'aime le tofu\0";
+	// char strncmp2[50] = "J'aime le poulet\0";
+	// ft_strncmp(strncmp1, strncmp2, 40);		// i = 10   | cmp = 4
+	// printf("strncmp : %d\n", strncmp(strncmp1, strncmp2, 40));
+
+	// ft_memchr
+
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
