@@ -24,6 +24,9 @@
 // lib for strlen() and equivalents
 #include <string.h>
 
+// lib for atoi()
+#include <stdlib.h>
+
 // test function
 static int error_count = 0;		// global variable to get total of errors at the end of the tests
 static int test_index = 1;
@@ -687,6 +690,29 @@ int	main(void)
 	// char memcmp2[50] = "J'aime le poulet\0";
 	// printf("ft_memcmp : %d\n", ft_memcmp(memcmp1, memcmp2, 40));		// i = 10   | cmp = 4
 	// printf("memcmp : %d\n", memcmp(memcmp1, memcmp2, 40));
+
+	//////////////////////////////////////////////////////////////////
+
+	// ft_atoi
+	int atoi_int;
+	int atoi_int2;
+	int atoi_int3;
+	int atoi_int4;
+	int atoi_int5;
+	int atoi_int6;
+	atoi_int = atoi("    --123abc");		// ==> 0
+	atoi_int2 = atoi("    -123abc");		// ==> -123
+	atoi_int3 = atoi("2147483647");		// ==> 2147483647
+	atoi_int4 = atoi("2147483648");		// ==> -2147483648 (overflow)
+	atoi_int5 = atoi("-2147483648");	// ==> -2147483648
+	atoi_int6 = atoi("-2147483649");	// ==> 2147483647 (overflow)
+	printf("%d\n", atoi_int);
+	printf("%d\n", atoi_int2);
+	printf("%d\n", atoi_int3);
+	printf("%d\n", atoi_int4);
+	printf("%d\n", atoi_int5);
+	printf("%d\n", atoi_int6);
+
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
