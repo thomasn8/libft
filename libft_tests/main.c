@@ -1,14 +1,15 @@
-/* --------------------- */
-// MAIN TO TEST LIBFT.A //
-/* ------------------- */
-
-// Compile with command :
-// 1.				make re				(ou "make fclean" puis "make all" ou "make" ou "make libft.a")
-// 1.5 (optional)	ranlib libft.a 		(créer index dans lib pour aller chercher rapidement les fonctions nécessaires)
-// 2.				gcc -Wall -Wextra -Werror libft_tests/main.c -L. -lft && ./a.out
-// 2.5 (optional) 	ar -t libft.a 		(display the modules/functions)
-// OR,	one command :
-// make re && gcc -Wall -Wextra -Werror libft_tests/main.c -L. -lft && ./a.out
+/* ------------------------------ */
+// MAIN FUNCTION TO TEST LIBFT.A //
+/* ---------------------------- */
+//
+// -------------------------------------------------------------------------------
+// | make re && gcc -Wall -Wextra -Werror libft_tests/main.c -L. -lft && ./a.out |
+// -------------------------------------------------------------------------------
+//
+// 	a) 	make all	(ou "make fclean" puis "make all" ou "make" ou "make libft.a")
+// 				a.a) 	Optional:	ranlib libft.a 	(créer index dans lib pour trouver rapidement les fonctions nécessaires)
+// 	b)	gcc -Wall -Wextra -Werror libft_tests/main.c -L. -lft && ./a.out
+// 				b.b) 	Optional:	ar -t libft.a 	(display the modules/functions)
 
 // libft.h
 #include "../libft.h"

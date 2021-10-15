@@ -15,7 +15,7 @@ II. 	Execute this all-in-one command in your terminal :
 	-------------------------------------------------------------------------------
 
 
-III.	What is does ?
+III.	What does is do ?
 
 ==> test your makefile + clean (fclean) + compile (cc) + make the lib (ar) + link (.c.o) + executable (a.out)
 ==>	It will tell you how many errors it gets from your libft functions and where they are (in which function)
@@ -43,4 +43,4 @@ After or before and after a replacing the \0 by _
 ________________________________________________________________________________
 
 BY
-© Thomas Nanchen (tnanchen)
+© Thomas Nanchen (thomasn8 / tnanchen)
