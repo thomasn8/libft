@@ -218,6 +218,21 @@ int	main(void)
 	// printf("%s\n", str2);
 
 	// ft_bzero
+	char ft_bzero1[4] = "abc\0";
+	char c_bzero1[4] = "abc\0";
+	ft_bzero(ft_bzero1, 1);	bzero(c_bzero1, 1);
+	print_errors_string("ft_bzero",		ft_bzero1,		c_bzero1);
+	//
+	char ft_bzero2[4] = "abc\0";
+	char c_bzero2[4] = "abc\0";
+	ft_bzero(ft_bzero2, 0);	bzero(c_bzero2, 0);
+	print_errors_string("ft_bzero",		ft_bzero2,		c_bzero2);
+	//
+	char ft_bzero3[4] = "abc\0";
+	char c_bzero3[4] = "abc\0";
+	ft_bzero(ft_bzero3 + 1, 1);	bzero(c_bzero3 + 1, 1);
+	print_errors_string("ft_bzero",		ft_bzero3,		c_bzero3);
+	//
 	char ft_str3[15] = "Pointerrr";
 	char str3[15] = "Pointerrr";
 	ft_bzero(ft_str3 + 5, 4);	bzero(str3 + 5, 4);
@@ -576,6 +591,10 @@ int	main(void)
 	char strncmp14[50] = "1234567890?";
 	print_errors("ft_strncmp",	ft_strncmp(strncmp13, strncmp14, 50),	strncmp(strncmp13, strncmp14, 50));
 
+	char strncmp15[50] = "1234\0 567890";
+	char strncmp16[50] = "1234\0 567890?";
+	print_errors("ft_memcmp",	ft_strncmp(strncmp15, strncmp16, 50),	strncmp(strncmp15, strncmp16, 50));
+
 	// char strncmp1[50] = "J'aime le tofu\0";
 	// char strncmp2[50] = "J'aime le poulet\0";
 	// ft_strncmp(strncmp1, strncmp2, 40);		// i = 10   | cmp = 4
@@ -587,6 +606,13 @@ int	main(void)
 	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 'b', 12),	memchr(memchr1, 'b', 12));
 	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 'c', 12),	memchr(memchr1, 'c', 12));
 	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 0, 12),		memchr(memchr1, 0, 12));
+	//
+	char memchr3[12] = "mem\0chr1\0";
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr3, 'a', 12),	memchr(memchr3, 'a', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr3, 'b', 12),	memchr(memchr3, 'b', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr3, 'c', 12),	memchr(memchr3, 'c', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr3, 0, 12),		memchr(memchr3, 0, 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr3, 0, 150),		memchr(memchr3, 0, 150));
 	// //
 	char memchr2[50] = "J'aime le tofu bien grillé.\n\0";
 	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '.', 50),		memchr(memchr2, '.', 50));
@@ -620,6 +646,47 @@ int	main(void)
 	// ptr = ft_memchr(memchr3, 'c', 1);
 	// printf("Ptr : %p\n", ptr);
 
+	// ft_memcmp
+	char memcmp1[50] = "J'aime le tofu\0";
+	char memcmp2[50] = "J'aime le poulet\0";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp1, memcmp2, 50),	memcmp(memcmp1, memcmp2, 50));
+	print_errors("ft_memcmp",	ft_memcmp(memcmp1, memcmp2, 0),	memcmp(memcmp1, memcmp2, 0));
+	
+	char memcmp3[50] = "J'ai\0me le tofu\0";
+	char memcmp4[50] = "J'aime le poulet\0";
+	ft_memcmp(memcmp3, memcmp4, 50);
+	print_errors("ft_memcmp",	ft_memcmp(memcmp3, memcmp4, 50),	memcmp(memcmp3, memcmp4, 50));
+	print_errors("ft_memcmp",	ft_memcmp(memcmp3, memcmp4, 10),	memcmp(memcmp3, memcmp4, 10));
+
+	char memcmp5[50] = "J'aime le tofu\0";
+	char memcmp6[50] = "J'aimais le poulet\0";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp5, memcmp6, 50),	memcmp(memcmp5, memcmp6, 50));
+	print_errors("ft_memcmp",	ft_memcmp(memcmp5, memcmp6, 10),	memcmp(memcmp5, memcmp6, 10));
+
+	char memcmp7[5] = "123\0\0";		//ERROR
+	char memcmp8[5] = "123\0\0";		//ERROR
+	print_errors("ft_memcmp",	ft_memcmp(memcmp7, memcmp8, 5),	memcmp(memcmp7, memcmp8, 5));
+
+	char memcmp9[50] = "123467890";
+	char memcmp10[50] = "1234567890";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp9, memcmp10, 50),	memcmp(memcmp9, memcmp10, 50));
+
+	char memcmp11[50] = "?123467890";
+	char memcmp12[50] = "1234567890";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp11, memcmp12, 50),	memcmp(memcmp11, memcmp12, 50));
+
+	char memcmp13[50] = "1234567890";
+	char memcmp14[50] = "1234567890?";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp13, memcmp14, 50),	memcmp(memcmp13, memcmp14, 50));
+
+	char memcmp15[50] = "1234\0 567890";
+	char memcmp16[50] = "1234\0 567890?";
+	print_errors("ft_memcmp",	ft_memcmp(memcmp15, memcmp16, 50),	memcmp(memcmp15, memcmp16, 50));
+
+	// char memcmp1[50] = "J'aime le tofu\0";
+	// char memcmp2[50] = "J'aime le poulet\0";
+	// printf("ft_memcmp : %d\n", ft_memcmp(memcmp1, memcmp2, 40));		// i = 10   | cmp = 4
+	// printf("memcmp : %d\n", memcmp(memcmp1, memcmp2, 40));
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
