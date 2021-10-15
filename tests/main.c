@@ -582,6 +582,43 @@ int	main(void)
 	// printf("strncmp : %d\n", strncmp(strncmp1, strncmp2, 40));
 
 	// ft_memchr
+	char memchr1[12] = "memchr1\0";
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 'a', 12),	memchr(memchr1, 'a', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 'b', 12),	memchr(memchr1, 'b', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 'c', 12),	memchr(memchr1, 'c', 12));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr1, 0, 12),		memchr(memchr1, 0, 12));
+	// //
+	char memchr2[50] = "J'aime le tofu bien grillé.\n\0";
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '.', 50),		memchr(memchr2, '.', 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'e', 50),		memchr(memchr2, 'e', 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, ' ', 50),		memchr(memchr2, ' ', 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '\n', 50),		memchr(memchr2, '\n', 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'w', 50),		memchr(memchr2, 'w', 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 0, 50),			memchr(memchr2, 0, 50));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '.', 10),		memchr(memchr2, '.', 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'e', 10),		memchr(memchr2, 'e', 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, ' ', 10),		memchr(memchr2, ' ', 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '\n', 10),		memchr(memchr2, '\n', 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'w', 10),		memchr(memchr2, 'w', 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 0, 10),			memchr(memchr2, 0, 10));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '.', 5),		memchr(memchr2, '.', 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'e', 5),		memchr(memchr2, 'e', 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, ' ', 5),		memchr(memchr2, ' ', 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '\n', 5),		memchr(memchr2, '\n', 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'w', 5),		memchr(memchr2, 'w', 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 0, 5),			memchr(memchr2, 0, 5));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '.', 1),		memchr(memchr2, '.', 1));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'e', 1),		memchr(memchr2, 'e', 1));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, ' ', 1),		memchr(memchr2, ' ', 1));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, '\n', 0),		memchr(memchr2, '\n', 0));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 'w', 0),		memchr(memchr2, 'w', 0));
+	print_errors_pointer("ft_memchr",	ft_memchr(memchr2, 0, 0),			memchr(memchr2, 0, 0));
+	//
+	// char *ptr;
+	// char memchr3[10] = "memchr3\0";
+	// printf("Ptr : %p\n", memchr3);
+	// ptr = ft_memchr(memchr3, 'c', 1);
+	// printf("Ptr : %p\n", ptr);
 
 	//////////////////////////////////////////////////////////////////
 
