@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_replace_backslashzero.c                         :+:      :+:    :+:   */
+/*   focuson_backslash_zero.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 11:04:01 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 14:28:19 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 00:29:01 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,3 @@ int	focus_on_backslash_zero(char *string, size_t limit)
 	}
 	return (0);
 }
-
-// char test[5];
-// test[0] = 'H';
-// test[1] = 'i';
-// test[2] = '\0';
-// test[3] = '\0';
-// test[4] = '\0';
-// // char test[5] = {0}; // Toutes les cases seront initialisées à 0

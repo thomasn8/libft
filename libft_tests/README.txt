@@ -34,5 +34,13 @@ b)	gcc -Wall -Wextra -Werror libft_tests/main.c -L. -lft && ./a.out
 
 ________________________________________________________________________________
 
+focus_on_backslash_zero()
+
+focus_on_backslash_zero.c contains a function you can use to debug.
+It will display all char and \0 from a string
+After or before and after a replacing the \0 by _
+
+________________________________________________________________________________
+
 BY
 © Thomas Nanchen (tnanchen)
