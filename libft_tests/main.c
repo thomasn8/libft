@@ -695,11 +695,38 @@ int	main(void)
 	// ft_strnstr
 	char 	haystack[50] = "Une chaine pas comme les autres";
 	char 	needle[50] = "comme";
-	size_t	len = 50;
-	// printf("haystack[0] : 	%p\n", haystack);
-	// printf("haystack[13] : 	%p\n\n", &haystack[15]);
-	// printf("needle : %p\n", needle[0]);
-	printf("ft_strnstr : 	%p\nc_strnstr : 	%p\n", ft_strnstr(haystack, needle, len), strnstr(haystack, needle, len));
+	size_t	len1 = 50;
+	size_t	len2 = 5;
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack, needle, len1), strnstr(haystack, needle, len1));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack, needle, len2), strnstr(haystack, needle, len2));
+	//
+	char 	haystack11[50] = "Salut";
+	char 	haystack12[50] = "Saluuuuuuuuut";
+	char 	haystack13[50] = "Saluu\0uuuuuuut";
+	char 	haystack14[50] = "";
+	char 	needle11[50] = "s";
+	char 	needle12[50] = "t";
+	char 	needle13[50] = "";
+	char 	needle14[50] = "2";
+	size_t	len11 = 50;
+	size_t	len12 = 5;
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack11, needle11, len11), strnstr(haystack11, needle11, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack11, needle11, len12), strnstr(haystack11, needle11, len12));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack11, needle12, len11), strnstr(haystack11, needle12, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack12, needle12, len11), strnstr(haystack12, needle12, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack12, needle12, len12), strnstr(haystack12, needle12, len12));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack13, needle12, len11), strnstr(haystack13, needle12, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack13, needle13, len11), strnstr(haystack13, needle13, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack13, needle14, len11), strnstr(haystack13, needle14, len11));
+	print_errors_pointer("ft_strnstr", ft_strnstr(haystack14, needle12, len11), strnstr(haystack14, needle12, len11));
+	//
+	// char 	haystack[50] = "Une chaine pas comme les autres";
+	// char 	needle[50] = "comme";
+	// size_t	len = 50;
+	// // printf("haystack[0] : 	%p\n", haystack);
+	// // printf("haystack[13] : 	%p\n\n", &haystack[15]);
+	// // printf("needle : %p\n", needle[0]);
+	// printf("ft_strnstr : 	%p\nc_strnstr : 	%p\n", ft_strnstr(haystack, needle, len), strnstr(haystack, needle, len));
 
 	//////////////////////////////////////////////////////////////////
 
