@@ -784,6 +784,8 @@ int	main(void)
 	// // focus_on_backslash_zero(ft_str_duplicated, 23);
 	// // focus_on_backslash_zero(c_str_duplicated, 23);
 
+	// ft_calloc
+
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
