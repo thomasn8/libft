@@ -692,6 +692,15 @@ int	main(void)
 	// printf("ft_memcmp : %d\n", ft_memcmp(memcmp1, memcmp2, 40));		// i = 10   | cmp = 4
 	// printf("memcmp : %d\n", memcmp(memcmp1, memcmp2, 40));
 
+	// ft_strnstr
+	char 	haystack[50] = "Une chaine pas comme les autres";
+	char 	needle[50] = "comme";
+	size_t	len = 50;
+	// printf("haystack[0] : 	%p\n", haystack);
+	// printf("haystack[13] : 	%p\n\n", &haystack[15]);
+	// printf("needle : %p\n", needle[0]);
+	printf("ft_strnstr : 	%p\nc_strnstr : 	%p\n", ft_strnstr(haystack, needle, len), strnstr(haystack, needle, len));
+
 	//////////////////////////////////////////////////////////////////
 
 	// ft_atoi
