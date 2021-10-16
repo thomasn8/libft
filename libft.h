@@ -6,15 +6,21 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 13:50:20 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 16:00:44 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/* --------------------------------------------------------------- */
+// Part 0 - Included libraries
+
 # include <stddef.h>	// FOR USAGE OF:	typedef unsigned long	size_t
 # include <stdlib.h>	// FOR USAGE OF:	malloc()
+
+/* --------------------------------------------------------------- */
+// Part 1 - Libc functions
 
 int		ft_isalpha(int c);
 
@@ -61,5 +67,8 @@ int		ft_atoi(const char *str);
 char	*ft_strdup(const char *s1);
 
 void	*ft_calloc(size_t count, size_t size);
+
+/* --------------------------------------------------------------- */
+// Part 2 - Additional functions
 
 #endif
