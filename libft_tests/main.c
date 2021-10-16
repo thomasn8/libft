@@ -1,5 +1,5 @@
 /* ------------------------------ */
-// MAIN FUNCTION TO TEST LIBFT.A //
+// 			LIBFT TESTS			 //
 /* ---------------------------- */
 //
 // -------------------------------------------------------------------------------
@@ -761,6 +761,28 @@ int	main(void)
 	// // atoi("2147483648");	// ==> -2147483648 (overflow)
 	// // atoi("-2147483648");	// ==> -2147483648
 	// // atoi("-2147483649");	// ==> 2147483647 (overflow)
+
+	//////////////////////////////////////////////////////////////////
+
+	// ft_strdup
+	char ft_strdup1[50]="FT string to duplicate\0";
+	char c_strdup1[50]="FT string to duplicate\0";
+	print_errors_string("ft_strdup", ft_strdup(ft_strdup1), strdup(c_strdup1));
+	print_errors_string("ft_strdup", ft_strdup("Phrase test"), strdup("Phrase test"));
+	print_errors_string("ft_strdup", ft_strdup("Phrase\0 test"), strdup("Phrase\0 test"));
+	print_errors_string("ft_strdup", ft_strdup(""), strdup(""));
+	print_errors_string("ft_strdup", ft_strdup("\n\n\n\n\n\0\n\n\n\n"), strdup("\n\n\n\n\n\0\n\n\n\n"));
+	//
+	// char ft_str_to_dup[50]="FT string to duplicate\0";
+	// char c_str_to_dup[50]="FT string to duplicate\0";
+	// char *ft_str_duplicated;
+	// char *c_str_duplicated;
+	// ft_str_duplicated = ft_strdup(ft_str_to_dup);
+	// c_str_duplicated = strdup(c_str_to_dup);
+	// // printf("%s\n", ft_str_duplicated);
+	// // printf("%s\n", c_str_duplicated);
+	// // focus_on_backslash_zero(ft_str_duplicated, 23);
+	// // focus_on_backslash_zero(c_str_duplicated, 23);
 
 	//////////////////////////////////////////////////////////////////
 

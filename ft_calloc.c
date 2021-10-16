@@ -1,32 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 18:19:02 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 15:09:10 by tnanchen         ###   ########.fr       */
+/*   Created: 2021/10/16 13:51:33 by tnanchen          #+#    #+#             */
+/*   Updated: 2021/10/16 13:52:39 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
 
-char	*ft_strrchr(const char *s, int c)
-{
-	int	len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	s = s + len;
-	while (len--)
-	{
-		if (*s == c)
-			return ((char *) s);
-		s--;
-	}
-	if (c == 0 && *s == 0)
-		return ((char *) s);
-	return (NULL);
-}
+// void	*ft_calloc(size_t count, size_t size)
+// {
+	
+// }
