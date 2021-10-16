@@ -6,20 +6,18 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:26:20 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 13:32:10 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 13:45:50 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+static char	*str_in_str(const char *haystack, const char *needle, size_t len)
 {
 	int		prev_match;
 	size_t	i;
 	size_t	j;
 
-	if (*needle == 0)
-		return ((char *) haystack);
 	prev_match = 0;
 	i = 0;
 	j = 0;
@@ -40,5 +38,17 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		}
 		i++;
 	}
+	return (NULL);
+}
+
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	char	*str_search;
+
+	if (*needle == 0)
+		return ((char *) haystack);
+	str_search = str_in_str(haystack, needle, len);
+	if (str_search)
+		return (str_search);
 	return (NULL);
 }
