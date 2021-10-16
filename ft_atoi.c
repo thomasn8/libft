@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 00:05:40 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 11:19:23 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 11:22:25 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int sign;
-	int res;
+	int	sign;
+	int	res;
 
 	sign = 1;
 	res = 0;

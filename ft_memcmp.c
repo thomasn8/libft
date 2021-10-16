@@ -6,18 +6,18 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:58:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 23:45:45 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 11:23:14 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const char	*ptr1;
 	const char	*ptr2;
-	int 		i;
-	int 		cmp;
+	int			i;
+	int			cmp;
 
 	if (n == 0)
 		return (0);
