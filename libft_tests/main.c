@@ -695,24 +695,36 @@ int	main(void)
 	//////////////////////////////////////////////////////////////////
 
 	// ft_atoi
-	int atoi_int;
-	int atoi_int2;
-	int atoi_int3;
-	int atoi_int4;
-	int atoi_int5;
-	int atoi_int6;
-	atoi_int = atoi("    --123abc");		// ==> 0
-	atoi_int2 = atoi("    -123abc");		// ==> -123
-	atoi_int3 = atoi("2147483647");		// ==> 2147483647
-	atoi_int4 = atoi("2147483648");		// ==> -2147483648 (overflow)
-	atoi_int5 = atoi("-2147483648");	// ==> -2147483648
-	atoi_int6 = atoi("-2147483649");	// ==> 2147483647 (overflow)
-	printf("%d\n", atoi_int);
-	printf("%d\n", atoi_int2);
-	printf("%d\n", atoi_int3);
-	printf("%d\n", atoi_int4);
-	printf("%d\n", atoi_int5);
-	printf("%d\n", atoi_int6);
+	print_errors("ft_atoi", 	ft_atoi("abc123"), 			atoi("abc123"));
+	print_errors("ft_atoi", 	ft_atoi("123abc"), 			atoi("123abc"));
+	print_errors("ft_atoi", 	ft_atoi("    abc123"), 		atoi("    abc123"));
+	print_errors("ft_atoi", 	ft_atoi("    123abc"), 		atoi("    123abc"));
+	print_errors("ft_atoi", 	ft_atoi("    +123abc"), 	atoi("    +123abc"));
+	print_errors("ft_atoi", 	ft_atoi("    -123abc"), 	atoi("    -123abc"));
+	print_errors("ft_atoi", 	ft_atoi("    --123abc"), 	atoi("    --123abc"));
+	print_errors("ft_atoi", 	ft_atoi("    ++123abc"), 	atoi("    ++123abc"));
+	print_errors("ft_atoi", 	ft_atoi("0"), 				atoi("0"));
+	print_errors("ft_atoi", 	ft_atoi("1"), 				atoi("1"));
+	print_errors("ft_atoi", 	ft_atoi("-0"), 				atoi("-0"));
+	print_errors("ft_atoi", 	ft_atoi("-1"), 				atoi("-1"));
+	print_errors("ft_atoi", 	ft_atoi("       100"), 		atoi("       100"));
+	print_errors("ft_atoi", 	ft_atoi("       -100"), 	atoi("       -100"));
+	print_errors("ft_atoi", 	ft_atoi("\0 100"), 			atoi("\0 100"));
+	print_errors("ft_atoi", 	ft_atoi("100\0"), 			atoi("100\0"));
+	print_errors("ft_atoi", 	ft_atoi("2147483647"), 		atoi("2147483647"));
+	print_errors("ft_atoi", 	ft_atoi("2147483648"), 		atoi("2147483648"));
+	print_errors("ft_atoi", 	ft_atoi("-2147483648"), 	atoi("-2147483648"));
+	print_errors("ft_atoi", 	ft_atoi("-2147483649"), 	atoi("-2147483649"));
+	// int ft_atoi_int1;
+	// int atoi_int1;
+	// ft_atoi_int1 = ft_atoi("    2147483648");		// ==> 0
+	// atoi_int1 = atoi("    2147483648");		// ==> -123
+	// printf("%d\n", ft_atoi_int1);
+	// printf("%d\n", atoi_int1);
+	// // atoi("2147483647");	// ==> 2147483647
+	// // atoi("2147483648");	// ==> -2147483648 (overflow)
+	// // atoi("-2147483648");	// ==> -2147483648
+	// // atoi("-2147483649");	// ==> 2147483647 (overflow)
 
 	//////////////////////////////////////////////////////////////////
 

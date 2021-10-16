@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 00:05:40 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 00:32:34 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/16 11:19:23 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,21 @@
 
 int	ft_atoi(const char *str)
 {
-	
+	int sign;
+	int res;
+
+	sign = 1;
+	res = 0;
+	while (*str == ' ')
+		str++;
+	if (*str == '-')
+		sign *= -1;
+	if (*str == '+' || *str == '-')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		res = res * 10 + *str - '0';
+		str++;
+	}
+	return (res * sign);
 }
-
-/*
-The atoi() function converts the initial portion of the string pointed to by
-str to int representation.
-
-gestion des espaces ? oui
-
-gestion des + et - ? non, 1 seul signe
-
-gestion des overflow ? oui, max +2147483647 et min -2147483648
-*/
