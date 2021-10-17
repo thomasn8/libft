@@ -90,6 +90,36 @@ int		print_errors_pointer(char *function_name, char *ft_str, char *c_str)
 	return (0);
 }
 
+int		print_errors_int_calloc(char *function_name, int *ft_str, int *c_str)
+{
+	test_index++;
+	if (*ft_str != *c_str)
+	{
+		red_color();
+		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
+		printf("ft_function : %d\nC_function :  %d\n\n", *ft_str, *c_str);
+		error_count++;
+		return(1);
+	}
+	return (0);
+}
+
+int		print_errors_char_calloc(char *function_name, char *ft_str, char *c_str)
+{
+	test_index++;
+	if (*ft_str != *c_str)
+	{
+		red_color();
+		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+		defaut_color();
+		printf("ft_function : %c\nC_function :  %c\n\n", *ft_str, *c_str);
+		error_count++;
+		return(1);
+	}
+	return (0);
+}
+
 int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
 {
 	test_index++;
@@ -785,23 +815,73 @@ int	main(void)
 	// // focus_on_backslash_zero(c_str_duplicated, 23);
 
 	// ft_calloc
+	// TESTS POUR FT_CALLOC 
+	// 1. comparer pointeur en position [0]
+	// 2. comparer pour (count*size)x pointeur en position [count*size]
+	int	int_size = sizeof(int);
+	int char_size = sizeof(char);
+
+	int zero = 0;
+	int one = 1;
+	int four = 4;
+	int ten = 10;
+	int hundred = 100;
 	
-		// TESTS POUR FT_CALLOC 
-		// 1. comparer pointeur de retour
-		// 2. comparer si count*size memoire à partir du poiteur = 0
+	int *calloc1;
+	int *ft_calloc1;
+	int i = -1;
+	calloc1 = calloc(one, four * int_size);
+	ft_calloc1 = ft_calloc(one, four * int_size);
+	print_errors_int_calloc("ft_calloc", ft_calloc1, calloc1);
+	while(++i < (one * four))
+		print_errors_int_calloc("ft_calloc", &ft_calloc1[i], &calloc1[i]);
+
+	char *calloc2;
+	char *ft_calloc2;
+	int j = -1;
+	calloc2 = calloc(one, four * char_size);
+	ft_calloc2 = ft_calloc(one, four * char_size);
+	print_errors_char_calloc("ft_calloc", ft_calloc2, calloc2);
+	while(++j < (one * four))
+		print_errors_char_calloc("ft_calloc", &ft_calloc2[j], &calloc2[j]);
+
+	int *calloc3;
+	int *ft_calloc3;
+	int k = -1;
+	calloc3 = calloc(one, zero * int_size);
+	ft_calloc3 = ft_calloc(one, zero * int_size);
+	print_errors_int_calloc("ft_calloc", ft_calloc3, calloc3);
+	while(++k < (one * zero))
+		print_errors_int_calloc("ft_calloc", &ft_calloc3[k], &calloc3[k]);
+	
+
+	int *calloc5;
+	int *ft_calloc5;
+	int m = -1;
+	calloc5 = calloc(four, hundred * int_size);
+	ft_calloc5 = ft_calloc(four, hundred * int_size);
+	print_errors_int_calloc("ft_calloc", ft_calloc5, calloc5);
+	while(++m < (four * hundred))
+		print_errors_int_calloc("ft_calloc", &ft_calloc5[m], &calloc5[m]);
+
+	char *calloc6;
+	char *ft_calloc6;
+	int n = -1;
+	calloc6 = calloc(ten, hundred * char_size);
+	ft_calloc6 = ft_calloc(ten, hundred * char_size);
+	print_errors_char_calloc("ft_calloc", ft_calloc6, calloc6);
+	while(++n < (ten * hundred))
+		print_errors_char_calloc("ft_calloc", &ft_calloc6[n], &calloc6[n]);
 
 	// int *calloc1;
 	// calloc1 = (int *)calloc(2, 2 * sizeof(int));
-
 	// int *calloc2;
 	// calloc2 = (int *)ft_calloc(2, 2 * sizeof(int));
-
 	// calloc1[3] = 10;
 	// int j = -1;
 	// printf("Calloc (int) :\n");
 	// while (++j < 4)
 	// 	printf("calloc1[%d] : %d (%p)\n", j , calloc1[j], &calloc1[j]);
-	
 	// calloc2[3] = 47;
 	// int i = -1;
 	// printf("\nFT_calloc (int) :\n");
@@ -811,16 +891,13 @@ int	main(void)
 	// //
 	// char *calloc3;
 	// calloc3 = calloc(2, 2 * sizeof(char));
-
 	// char *calloc4;
 	// calloc4 = ft_calloc(2, 2 * sizeof(char));
-
 	// calloc3[3] = 'a';
 	// int k = -1;
 	// printf("\nCalloc (char) :\n");
 	// while (++k < 4)
 	// 	printf("calloc3[%d] : %c (%p)\n", k , calloc3[k], &calloc3[k]);
-	
 	// calloc4[3] = 'z';
 	// int l = -1;
 	// printf("\nFT_calloc (char) :\n");
