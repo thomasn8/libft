@@ -785,6 +785,47 @@ int	main(void)
 	// // focus_on_backslash_zero(c_str_duplicated, 23);
 
 	// ft_calloc
+	
+		// TESTS POUR FT_CALLOC 
+		// 1. comparer pointeur de retour
+		// 2. comparer si count*size memoire à partir du poiteur = 0
+
+	// int *calloc1;
+	// calloc1 = (int *)calloc(2, 2 * sizeof(int));
+
+	// int *calloc2;
+	// calloc2 = (int *)ft_calloc(2, 2 * sizeof(int));
+
+	// calloc1[3] = 10;
+	// int j = -1;
+	// printf("Calloc (int) :\n");
+	// while (++j < 4)
+	// 	printf("calloc1[%d] : %d (%p)\n", j , calloc1[j], &calloc1[j]);
+	
+	// calloc2[3] = 47;
+	// int i = -1;
+	// printf("\nFT_calloc (int) :\n");
+	// while (++i < 4)
+	// 	printf("calloc2[%d] : %d (%p)\n", i , calloc2[i], &calloc2[i]);
+	// //
+	// //
+	// char *calloc3;
+	// calloc3 = calloc(2, 2 * sizeof(char));
+
+	// char *calloc4;
+	// calloc4 = ft_calloc(2, 2 * sizeof(char));
+
+	// calloc3[3] = 'a';
+	// int k = -1;
+	// printf("\nCalloc (char) :\n");
+	// while (++k < 4)
+	// 	printf("calloc3[%d] : %c (%p)\n", k , calloc3[k], &calloc3[k]);
+	
+	// calloc4[3] = 'z';
+	// int l = -1;
+	// printf("\nFT_calloc (char) :\n");
+	// while (++l < 4)
+	// 	printf("calloc4[%d] : %c (%p)\n", l , calloc4[l], &calloc4[l]);
 
 	//////////////////////////////////////////////////////////////////
 
