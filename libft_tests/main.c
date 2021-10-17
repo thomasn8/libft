@@ -135,6 +135,27 @@ int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
 	return (0);
 }
 
+int		substr_test(char *function_name, char *ft_str, char *str, unsigned int substr_start, size_t substr_len)
+{
+	size_t substr_index = -1;
+
+	test_index++;
+	while(++substr_index < substr_len)
+	{
+		// printf("Char from ft_function str: %c\nChar from original str :  %c\n\n", ft_str[substr_index], str[substr_start + substr_index]);
+		if(ft_str[substr_index] != str[substr_start + substr_index])
+		{
+			red_color();
+			printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+			defaut_color();
+			printf("Char from ft_function str: %c\nChar from original str :  %c\n\n", ft_str[substr_index], str[substr_start + substr_index]);
+			error_count++;
+			return(1);
+		}
+	}
+	return (0);
+}
+
 int	main(void)
 {
 	// Makefile test :
@@ -903,6 +924,49 @@ int	main(void)
 	// printf("\nFT_calloc (char) :\n");
 	// while (++l < 4)
 	// 	printf("calloc4[%d] : %c (%p)\n", l , calloc4[l], &calloc4[l]);
+
+	// ft_substr
+	char *substr1 = "Phrase\0 une.\0";
+	char *ft_substr1;
+	unsigned int substr_start1 = 3;
+	size_t substr_len1 = 3;
+	ft_substr1 = ft_substr(substr1, substr_start1, substr_len1);
+	substr_test("ft_substr", ft_substr1, substr1, substr_start1, substr_len1);
+	
+	char *substr2 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\0";
+	char *ft_substr2;
+	unsigned int substr_start2 = 0;
+	size_t substr_len2 = 10;
+	ft_substr2 = ft_substr(substr2, substr_start2, substr_len2);
+	substr_test("ft_substr", ft_substr2, substr2, substr_start2, substr_len2);
+
+	char *substr3 = "";
+	char *ft_substr3;
+	unsigned int substr_start3 = 0;
+	size_t substr_len3 = 10;
+	ft_substr3 = ft_substr(substr3, substr_start3, substr_len3);
+	substr_test("ft_substr", ft_substr3, substr3, substr_start3, substr_len3);
+
+	char *substr4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\0";
+	char *ft_substr4;
+	unsigned int substr_start4 = 0;
+	size_t substr_len4 = 0;
+	ft_substr4 = ft_substr(substr4, substr_start4, substr_len4);
+	substr_test("ft_substr", ft_substr4, substr4, substr_start4, substr_len4);
+
+	char *substr5 = "Phrase une.\0";
+	char *ft_substr5;
+	unsigned int substr_start5 = 11;
+	size_t substr_len5 = 0;
+	ft_substr5 = ft_substr(substr5, substr_start5, substr_len5);
+	substr_test("ft_substr", ft_substr5, substr5, substr_start5, substr_len5);
+
+	char *substr6 = "Phrase une.\0";
+	char *ft_substr6;
+	unsigned int substr_start6 = 11;
+	size_t substr_len6 = 5;
+	ft_substr6 = ft_substr(substr6, substr_start6, substr_len6);
+	substr_test("ft_substr", ft_substr6, substr6, substr_start6, substr_len6);
 
 	//////////////////////////////////////////////////////////////////
 
