@@ -1030,23 +1030,71 @@ int	main(void)
 
 	// ft_split
 	char *s1 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.\0";
-	// char *s1 = 0;
 	char c1 = '_';
 	char **words;
 	words = ft_split(s1, c1);
-	// printf("Tab : %p\n", words);
-	// printf("Str0 (%p) : %p \n", words[0], &words[0]);
-	printf("Str0 (%p) : %s \n", words[0], words[0]);
-	// printf("Str0 (%p) : %c \n", &words[0][0], words[0][0]);
-	// printf("Str0 (%p) : %c \n", &words[0][1], words[0][1]);
-	// printf("Str0 (%p) : %c \n", &words[0][2], words[0][2]);
-	// printf("Str0 (%p) : %c \n", &words[0][3], words[0][3]);
-	printf("Str1 (%p) : %s \n", words[1], words[1]);
-	// printf("Str1 (%p) : %c \n", &words[1][0], words[1][0]);
-	printf("Str2 (%p) : %s \n", words[2], words[2]);
-	printf("Str3 (%p) : %s \n", words[3], words[3]);
-	printf("Str4 (%p) : %s \n", words[4], words[4]);
-
+	// Expected words :
+	char *word_1_1 = "Une";
+	char *word_1_2 = "petite";
+	char *word_1_3 = "chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee";
+	char *word_1_4 = "de";
+	char *word_1_5 = "caracteres.";
+	// Tests :
+	print_errors_string("ft_split", ft_split(s1, c1)[0], word_1_1);
+	print_errors_string("ft_split", ft_split(s1, c1)[1], word_1_2);
+	print_errors_string("ft_split", ft_split(s1, c1)[2], word_1_3);
+	print_errors_string("ft_split", ft_split(s1, c1)[3], word_1_4);
+	print_errors_string("ft_split", ft_split(s1, c1)[4], word_1_5);
+	//
+	//
+	char *s2 = "     salut       les   copines    \0 Vous allez bien ?\0";
+	char c2 = ' ';
+	char **words2;
+	words2 = ft_split(s2, c2);
+	// Expected words :
+	char *word_2_1 = "salut";
+	char *word_2_2 = "les";
+	char *word_2_3 = "copines";
+	// Tests :
+	print_errors_string("ft_split", ft_split(s2, c2)[0], word_2_1);
+	print_errors_string("ft_split", ft_split(s2, c2)[1], word_2_2);
+	print_errors_string("ft_split", ft_split(s2, c2)[2], word_2_3);
+	//
+	//
+	char *s3 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.\0";
+	char c3 = 0;
+	char **words3;
+	words3 = ft_split(s3, c3);
+	// Expected words :
+	char *word_3_1 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.";
+	// Tests :
+	print_errors_string("ft_split", ft_split(s3, c3)[0], word_3_1);
+	//
+	//
+	char *s4 = 0;
+	char c4 = ' ';
+	// char c4 = 0;
+	char **words4;
+	words4 = ft_split(s4, c4);
+	// Tests :
+	if(words4 != NULL)
+	{
+		red_color();
+		printf("ERROR (test n.%d) in function \"ft_split\"\n", test_index);
+		defaut_color();
+		printf("ft_function : %p | Expected :  %s\n\n", words4, NULL);
+		error_count++;
+		return(1);
+	}
+	//
+	//
+	char *s5 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\0";
+	char c5 = ' ';
+	char c6 = 'e';
+	char **words5;
+	char **words6;
+	words5 = ft_split(s5, c5);
+	words6 = ft_split(s5, c6);
 
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();
