@@ -1033,14 +1033,15 @@ int	main(void)
 	char *set1 = ",;_\0";
 	char *strtrimed;
 	strtrimed = ft_strtrim(strtrim1, set1);
-	printf("\n%s\n", strtrimed);
-	// focus_on_backslash_zero(strtrimed, 25);
+	// printf("\n%s\n", strtrimed);
+	print_errors_string("ft_strtrim", strtrimed, "Une_chaine_comme_ça");
 	//
 	char *strtrim2 = "        ........,,,{{{{{{{[[[[[[[[((((((((   ...  Il était une fois ...   ))))))))]]]]]]]]}}}}}},,,........          \0";
 	char *set2 = " .,()[]{}\0";
 	char *strtrimed2;
 	strtrimed2 = ft_strtrim(strtrim2, set2);
-	printf("\n%s\n", strtrimed2);
+	// printf("\n%s\n", strtrimed2);
+	print_errors_string("ft_strtrim", strtrimed2, "Il était une fois");
 
 	// ft_split
 	char *s1 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.\0";

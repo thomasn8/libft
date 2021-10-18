@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 23:09:22 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 23:10:07 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,18 +74,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	len = slen(s1);
 	trim_start = trim_start_count(s1, set);
 	trim_end = trim_end_count(s1, set, len);
-	// printf("\nlen : %d | trim_start : %d | trim_end : %d\n", len, trim_start, trim_end);
-	// printf("\nMalloc_size : %d\n", (len - trim_start - trim_end));
 	strtrim = malloc((len - trim_start - trim_end) * sizeof(char) + 1);
 	if (! strtrim)
 		return (NULL);
 	i = -1;
 	trim_end = len - trim_start - trim_end +1;
 	while (++i < trim_end)
-	{
-		// printf("\n%d", i);
 		strtrim[i] = s1[trim_start++];
-	}
 	strtrim[i] = 0;
 	return (strtrim);
 }
