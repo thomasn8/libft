@@ -1118,42 +1118,14 @@ int	main(void)
 	print_errors_string("ft_split", words6[0], "Lor");
 	print_errors_string("ft_split", words6[74], "st laborum.");
 
+	// ft_itoa 
+	int number = 0;
+	char* nbr;
+	nbr = ft_itoa(number);
+	printf("%s\n", nbr);
+	focus_on_backslash_zero(nbr, 10);
 
-	// printf("words[5] : %p\n", words[5]);
-
-	// int w_c1 = -1;
-	// int w_c1_char = 1;
-	// while(s5[++w_c1])
-	// {
-	// 	if(s5[++w_c1] == ' ')
-	// 		w_c1_char++;
-	// }
-	// printf("Words in lorem ipsum : %d\n",w_c1_char);
-	// printf("First word in lorem ipsum : %s\n", words5[0]);
-	// printf("Last word in lorem ipsum : %s\n", words5[69]);
-
-
-	// test_index++;
-	// if(!words5)
-	// {
-	// 	red_color();
-	// 	printf("ERROR (test n.%d) in function \"ft_split\"\n", test_index);
-	// 	defaut_color();
-	// 	printf("ft_function : %p | Expected :  %s\n\n", words5, NULL);
-	// 	error_count++;
-	// 	return(1);
-	// }
-
-	// test_index++;
-	// if(!words6)
-	// {
-	// 	red_color();
-	// 	printf("ERROR (test n.%d) in function \"ft_split\"\n", test_index);
-	// 	defaut_color();
-	// 	printf("ft_function : %p | Expected :  %s\n\n", words6, NULL);
-	// 	error_count++;
-	// 	return(1);
-	// }
+	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();
