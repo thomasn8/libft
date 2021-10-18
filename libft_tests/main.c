@@ -53,7 +53,7 @@ int		print_errors(char *function_name, int ft_function, int c_function)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %d\nC_function :  %d\n\n", ft_function, c_function);
+		printf("ft_function : %d\nExpected :  %d\n\n", ft_function, c_function);
 		error_count++;
 		return(1);
 	}
@@ -68,7 +68,7 @@ int		print_errors_string(char *function_name, char *ft_str, char *c_str)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %s\nC_function :  %s\n\n", ft_str, c_str);
+		printf("ft_function : %s\nExpected :  %s\n\n", ft_str, c_str);
 		error_count++;
 		return(1);
 	}
@@ -83,7 +83,7 @@ int		print_errors_pointer(char *function_name, char *ft_str, char *c_str)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %p\nC_function :  %p\n\n", ft_str, c_str);
+		printf("ft_function : %p\nExpected :  %p\n\n", ft_str, c_str);
 		error_count++;
 		return(1);
 	}
@@ -98,7 +98,7 @@ int		print_errors_int_calloc(char *function_name, int *ft_str, int *c_str)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %d\nC_function :  %d\n\n", *ft_str, *c_str);
+		printf("ft_function : %d\nExpected :  %d\n\n", *ft_str, *c_str);
 		error_count++;
 		return(1);
 	}
@@ -113,7 +113,7 @@ int		print_errors_char_calloc(char *function_name, char *ft_str, char *c_str)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %c\nC_function :  %c\n\n", *ft_str, *c_str);
+		printf("ft_function : %c\nExpected :  %c\n\n", *ft_str, *c_str);
 		error_count++;
 		return(1);
 	}
@@ -128,7 +128,7 @@ int		print_errors_size(char *function_name, size_t ft_str, size_t c_str)
 		red_color();
 		printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
 		defaut_color();
-		printf("ft_function : %zu\nC_function :  %zu\n\n", ft_str, c_str);
+		printf("ft_function : %zu\nExpected :  %zu\n\n", ft_str, c_str);
 		error_count++;
 		return(1);
 	}
@@ -1077,6 +1077,7 @@ int	main(void)
 	char **words4;
 	words4 = ft_split(s4, c4);
 	// Tests :
+	test_index++;
 	if(words4 != NULL)
 	{
 		red_color();
@@ -1095,6 +1096,64 @@ int	main(void)
 	char **words6;
 	words5 = ft_split(s5, c5);
 	words6 = ft_split(s5, c6);
+
+
+	int words5_count = 0;
+	int words5_i = -1;
+	while(words5[++words5_i] != NULL)
+		words5_count++;
+	// printf("words5_count : %d\n", words5_count);
+	// printf("words5[137] : %s\n", words5[137]);
+	// printf("words5[138] : %s\n", words5[138]);
+	print_errors_string("ft_split", words5[0], "Lorem");
+	print_errors_string("ft_split", words5[137], "laborum.");
+
+	int words6_count = 0;
+	int words6_i = -1;
+	while(words6[++words6_i] != NULL)
+		words6_count++;
+	// printf("words6_count : %d\n", words6_count);
+	// printf("words6[74] : %s\n", words6[74]);
+	// printf("words6[75] : %s\n", words6[75]);
+	print_errors_string("ft_split", words6[0], "Lor");
+	print_errors_string("ft_split", words6[74], "st laborum.");
+
+
+	// printf("words[5] : %p\n", words[5]);
+
+	// int w_c1 = -1;
+	// int w_c1_char = 1;
+	// while(s5[++w_c1])
+	// {
+	// 	if(s5[++w_c1] == ' ')
+	// 		w_c1_char++;
+	// }
+	// printf("Words in lorem ipsum : %d\n",w_c1_char);
+	// printf("First word in lorem ipsum : %s\n", words5[0]);
+	// printf("Last word in lorem ipsum : %s\n", words5[69]);
+
+
+	// test_index++;
+	// if(!words5)
+	// {
+	// 	red_color();
+	// 	printf("ERROR (test n.%d) in function \"ft_split\"\n", test_index);
+	// 	defaut_color();
+	// 	printf("ft_function : %p | Expected :  %s\n\n", words5, NULL);
+	// 	error_count++;
+	// 	return(1);
+	// }
+
+	// test_index++;
+	// if(!words6)
+	// {
+	// 	red_color();
+	// 	printf("ERROR (test n.%d) in function \"ft_split\"\n", test_index);
+	// 	defaut_color();
+	// 	printf("ft_function : %p | Expected :  %s\n\n", words6, NULL);
+	// 	error_count++;
+	// 	return(1);
+	// }
 
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();

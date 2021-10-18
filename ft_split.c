@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 16:09:48 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 17:11:42 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ char	**ft_split(char const *s, char c)
 	tab = malloc(words * sizeof(char *) + 1);
 	if (!tab)
 		return (NULL);
+	tab[words] = NULL;
 	if ((words_alloc(tab, s, c, i)) == 0)
 		return (NULL);
 	words_split(tab, s, c, i);
