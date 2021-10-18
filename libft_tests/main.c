@@ -1133,7 +1133,7 @@ int	main(void)
 	print_errors_string("ft_itoa", ft_itoa(number6), "-2147483647");
 	int number7 = -2147483648;
 	print_errors_string("ft_itoa", ft_itoa(number7), "-2147483648");
-	// printf("%s\n", ft_itoa(number7));
+	printf("%s\n", ft_itoa(number7));
 
 	//////////////////////////////////////////////////////////////////
 
