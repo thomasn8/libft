@@ -156,6 +156,36 @@ int		substr_test(char *function_name, char *ft_str, char *str, unsigned int subs
 	return (0);
 }
 
+int		strjoin_test(char *function_name, char *str, char *strjoin)
+{
+	int i = -1;
+
+	test_index++;
+	while(str[++i])
+	{
+		// printf("Char from ft_function str: %c\nChar from original str :  %c\n\n", ft_str[substr_index], str[substr_start + substr_index]);
+		if(str[i] != strjoin[i])
+		{
+			red_color();
+			printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+			defaut_color();
+			printf("Expected : %s\nStrjoin :  %s\n\n", str, strjoin);
+			error_count++;
+			return(1);
+		}
+	}
+	if(strjoin[i] != 0 && str[i] != strjoin[i])
+		{
+			red_color();
+			printf("ERROR (test n.%d) in function \"%s\"\n", test_index, function_name);
+			defaut_color();
+			printf("Expected : %s\nStrjoin :  %s\n\n", str, strjoin);
+			error_count++;
+			return(1);
+		}
+	return (0);
+}
+
 int	main(void)
 {
 	// Makefile test :
@@ -968,6 +998,35 @@ int	main(void)
 	ft_substr6 = ft_substr(substr6, substr_start6, substr_len6);
 	substr_test("ft_substr", ft_substr6, substr6, substr_start6, substr_len6);
 
+	// ft_strjoin
+
+	char *join1 = "Il était une fois\0";
+	char *join2 = " un jeune louvetau.\0";
+	char *strjoin1 = "Il était une fois un jeune louvetau.\0";
+	char *strjoin2;
+	strjoin2 = ft_strjoin(join1, join2);
+	strjoin_test("ft_strlcat",	strjoin1,	strjoin2);
+
+	char *join3 = "        \n bla bla bla ... \0  bla bla bla ... ";
+	char *join4 = " bli bli bli bli bli bli \t blo blo ...\0";
+	char *strjoin3 = "        \n bla bla bla ...  bli bli bli bli bli bli \t blo blo ...\0";
+	char *strjoin4;
+	strjoin4 = ft_strjoin(join3, join4);
+	strjoin_test("ft_strlcat",	strjoin3,	strjoin4);
+
+	char *join5 = "\0";
+	char *join6 = " un jeune louvetau.\0";
+	char *strjoin5 = " un jeune louvetau.\0";
+	char *strjoin6;
+	strjoin6 = ft_strjoin(join5, join6);
+	strjoin_test("ft_strlcat",	strjoin5,	strjoin6);
+
+	char *join7 = "Il était une fois\0";
+	char *join8 = "\0";
+	char *strjoin7 = "Il était une fois\0";
+	char *strjoin8;
+	strjoin8 = ft_strjoin(join7, join8);
+	strjoin_test("ft_strlcat",	strjoin7,	strjoin8);
 	//////////////////////////////////////////////////////////////////
 
 	// Total of errors in tests
