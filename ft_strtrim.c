@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 23:10:07 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 23:15:21 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	slen(char const *s1)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	while (s1[len])
@@ -25,9 +25,9 @@ static int	slen(char const *s1)
 static int	trim_start_count(char const *s1, char const *set)
 {
 	int	trim_start;
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	trim_start = 0;
 	j = -1;
 	i = 0;
@@ -46,8 +46,8 @@ static int	trim_start_count(char const *s1, char const *set)
 static int	trim_end_count(char const *s1, char const *set, int len)
 {
 	int	trim_end;
-	int j;
-	
+	int	j;
+
 	trim_end = 0;
 	j = -1;
 	while (set[++j])
@@ -64,11 +64,11 @@ static int	trim_end_count(char const *s1, char const *set, int len)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *strtrim;
-	int	len;
-	int	trim_start;
-	int	trim_end;
-	int i;
+	char	*strtrim;
+	int		len;
+	int		trim_start;
+	int		trim_end;
+	int		i;
 
 	strtrim = NULL;
 	len = slen(s1);
@@ -78,7 +78,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (! strtrim)
 		return (NULL);
 	i = -1;
-	trim_end = len - trim_start - trim_end +1;
+	trim_end = len - trim_start - trim_end + 1;
 	while (++i < trim_end)
 		strtrim[i] = s1[trim_start++];
 	strtrim[i] = 0;
