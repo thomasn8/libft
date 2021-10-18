@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 14:29:49 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 15:06:03 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,12 @@ char **ft_split(char const *s, char c)
 	}
 
 	printf("\nWords count: %d\n", words);
-	tab = malloc (words * sizeof(char *) + 1);
-	printf("Pointer on tab : %p\n", tab);
-	
+	tab = malloc(words * sizeof(char *) + 1);
+	if(!tab)
+		return (NULL);
+	tab[words] = 0;
+	printf("Pointer on tab : %p\n\n", tab);
+
 	
 	i = 0;
 	start = 0;
@@ -61,9 +64,16 @@ char **ft_split(char const *s, char c)
 			i++;
 		end = i;
 
+		printf("Malloc size : %d\n", (end - start + 1));
 		tab[word] = malloc((end - start) * sizeof(char) + 1);
+		if(!tab[word])
+			return (NULL);
 		while (start < end)
 			tab[word][letter++] = s[start++];
+		tab[word][letter] = 0;
+		printf("Str[%d] starts at pointer %p\n", word, tab[word]);
+		word++;
+		letter = 0;
 	}
 
 	return (tab);
