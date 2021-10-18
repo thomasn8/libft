@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/17 23:16:15 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:45:11 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,7 @@ void	*ft_calloc(size_t count, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 char	*ft_strjoin(char const *s1, char const *s2);
+
+char	**ft_split(char const *s, char c);
 
 #endif

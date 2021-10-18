@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 23:15:31 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 02:14:07 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:46:07 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	strjoin[i] = 0;
 	return (strjoin);
 }
-
-/*
-#1. La chaine de caractères préfixe.
-#2. La chaine de caractères suffixe.
-
-La nouvelle chaine de caractères. NULL si l’allocation échoue.
-
-Alloue (avec malloc(3)) et retourne une nouvelle chaine, 
-résultat de la concaténation de s1 et s2.
-*/

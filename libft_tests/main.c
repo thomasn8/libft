@@ -999,7 +999,6 @@ int	main(void)
 	substr_test("ft_substr", ft_substr6, substr6, substr_start6, substr_len6);
 
 	// ft_strjoin
-
 	char *join1 = "Il était une fois\0";
 	char *join2 = " un jeune louvetau.\0";
 	char *strjoin1 = "Il était une fois un jeune louvetau.\0";
@@ -1028,6 +1027,12 @@ int	main(void)
 	strjoin8 = ft_strjoin(join7, join8);
 	strjoin_test("ft_strlcat",	strjoin7,	strjoin8);
 	//////////////////////////////////////////////////////////////////
+
+	// ft_split
+	char *s1 = "_Une__chaine____de_caracteres.\0";
+	// char *s1 = 0;
+	char c1 = '_';
+	ft_split(s1, c1);
 
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();
