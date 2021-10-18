@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:40:15 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 21:24:25 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:42:52 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	n_len(int n)
 {
-	int		len;
+	int	len;
 
 	len = 0;
 	if (n < 0)

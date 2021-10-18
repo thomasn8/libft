@@ -1028,6 +1028,20 @@ int	main(void)
 	strjoin_test("ft_strlcat",	strjoin7,	strjoin8);
 	//////////////////////////////////////////////////////////////////
 
+	// ft_strtrim
+	char *strtrim1 = "___Une_chaine_comme_ça_____\0";
+	char *set1 = ",;_\0";
+	char *strtrimed;
+	strtrimed = ft_strtrim(strtrim1, set1);
+	printf("\n%s\n", strtrimed);
+	// focus_on_backslash_zero(strtrimed, 25);
+	//
+	char *strtrim2 = "        ........,,,{{{{{{{[[[[[[[[((((((((   ...  Il était une fois ...   ))))))))]]]]]]]]}}}}}},,,........          \0";
+	char *set2 = " .,()[]{}\0";
+	char *strtrimed2;
+	strtrimed2 = ft_strtrim(strtrim2, set2);
+	printf("\n%s\n", strtrimed2);
+
 	// ft_split
 	char *s1 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.\0";
 	char c1 = '_';

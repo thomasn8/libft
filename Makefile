@@ -23,7 +23,7 @@ SRCS	= ft_isalpha.c	\
 		  ft_calloc.c	\
 		  ft_substr.c	\
 		  ft_strjoin.c	\
-		  ft_strtrim	\
+		  ft_strtrim.c	\
 		  ft_split.c	\
 		  ft_itoa.c
 
