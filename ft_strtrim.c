@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 23:15:21 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 23:16:56 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (! strtrim)
 		return (NULL);
 	i = -1;
-	trim_end = len - trim_start - trim_end + 1;
-	while (++i < trim_end)
+	len = len - trim_start - trim_end + 1;
+	while (++i < len)
 		strtrim[i] = s1[trim_start++];
 	strtrim[i] = 0;
 	return (strtrim);
