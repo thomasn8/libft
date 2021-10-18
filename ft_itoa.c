@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:40:15 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 21:18:11 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 21:22:27 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,26 @@ char	*ft_itoa(int n)
 	char	*nbr;
 	int		len;
 
-	if (n != 0 && n != -2147483648)
-	{
-		len = n_len(n);
-		nbr = malloc(len * sizeof(char) + 1);
-		if (!nbr)
-			return (NULL);
-		if (n < 0)
-		{	
-			n *= -1;
-			nbr[0] = '-';
-		}
-		nbr[len] = 0;
-		while (len-- && n > 0)
-		{
-			nbr[len] = n % 10 + '0';
-			n /= 10;
-		}
-		return (nbr);
-	}
 	if (n == 0)
 		return ("0");
-	return ("-2147483648");
+	if (n == -2147483648)
+		return ("-2147483648");
+	len = n_len(n);
+	nbr = malloc(len * sizeof(char) + 1);
+	if (!nbr)
+		return (NULL);
+	if (n < 0)
+	{	
+		n *= -1;
+		nbr[0] = '-';
+	}
+	nbr[len] = 0;
+	while (len-- && n > 0)
+	{
+		nbr[len] = n % 10 + '0';
+		n /= 10;
+	}
+	return (nbr);
 }
 
 // static char	*exceptions(int n, int i)
