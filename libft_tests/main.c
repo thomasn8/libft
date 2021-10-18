@@ -1119,11 +1119,21 @@ int	main(void)
 	print_errors_string("ft_split", words6[74], "st laborum.");
 
 	// ft_itoa 
-	int number = 0;
-	char* nbr;
-	nbr = ft_itoa(number);
-	printf("%s\n", nbr);
-	focus_on_backslash_zero(nbr, 10);
+	int number1 = 0;
+	print_errors_string("ft_itoa", ft_itoa(number1), "0");
+	int number2 = -0;
+	print_errors_string("ft_itoa", ft_itoa(number2), "0");
+	int number3 = 1;
+	print_errors_string("ft_itoa", ft_itoa(number3), "1");
+	int number4 = -1;
+	print_errors_string("ft_itoa", ft_itoa(number4), "-1");
+	int number5 = 2147483647;
+	print_errors_string("ft_itoa", ft_itoa(number5), "2147483647");
+	int number6 = -2147483647;
+	print_errors_string("ft_itoa", ft_itoa(number6), "-2147483647");
+	int number7 = -2147483648;
+	print_errors_string("ft_itoa", ft_itoa(number7), "-2147483648");
+	// printf("%s\n", ft_itoa(number7));
 
 	//////////////////////////////////////////////////////////////////
 

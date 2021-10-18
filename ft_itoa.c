@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:40:15 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 20:00:25 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/18 20:56:26 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,32 @@ static int	n_len(int n)
 	return (len);
 }
 
-static char	*is_zero(void)
+static char	*is_exception(int n)
 {
 	char	*nbr;
+	int		i;
 
-	nbr = malloc(1 * sizeof(char) + 1);
+	i = 10;
+	nbr = NULL;
+	if (n == 0)
+	{
+		nbr = malloc(1 * sizeof(char) + 1);
+		*nbr = '0';
+		*(nbr + 1) = 0;
+		return (nbr);
+	}
+	nbr = malloc(11 * sizeof(char) + 1);
 	if (!nbr)
 		return (NULL);
-	*nbr = '0';
-	*(nbr + 1) = 0;
+	nbr[0] = '-';
+	nbr[11] = 0;
+	nbr[10] = '8';
+	n = 214748364;
+	while (--i > 0)
+	{
+		nbr[i] = n % 10 + '0';
+		n /= 10;
+	}
 	return (nbr);
 }
 
@@ -47,7 +64,7 @@ char	*ft_itoa(int n)
 	char	*nbr;
 	int		len;
 
-	if (n != 0)
+	if (n != 0 && n != -2147483648)
 	{
 		len = n_len(n);
 		nbr = malloc(len * sizeof(char) + 1);
@@ -66,6 +83,6 @@ char	*ft_itoa(int n)
 		}
 		return (nbr);
 	}
-	nbr = is_zero();
+	nbr = is_exception(n);
 	return (nbr);
 }
