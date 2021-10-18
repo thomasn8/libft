@@ -1034,20 +1034,15 @@ int	main(void)
 	char c1 = '_';
 	char **words;
 	words = ft_split(s1, c1);
-	printf("Tab : %p\n", words);
-	printf("Str0 (%p) : %p \n", words[0], &words[0]);
-
-
+	// printf("Tab : %p\n", words);
+	// printf("Str0 (%p) : %p \n", words[0], &words[0]);
 	printf("Str0 (%p) : %s \n", words[0], words[0]);
-	printf("Str0 (%p) : %c \n", &words[0][0], words[0][0]);
-	printf("Str0 (%p) : %c \n", &words[0][1], words[0][1]);
-	printf("Str0 (%p) : %c \n", &words[0][2], words[0][2]);
-	printf("Str0 (%p) : %c \n", &words[0][3], words[0][3]);
-
+	// printf("Str0 (%p) : %c \n", &words[0][0], words[0][0]);
+	// printf("Str0 (%p) : %c \n", &words[0][1], words[0][1]);
+	// printf("Str0 (%p) : %c \n", &words[0][2], words[0][2]);
+	// printf("Str0 (%p) : %c \n", &words[0][3], words[0][3]);
 	printf("Str1 (%p) : %s \n", words[1], words[1]);
-	printf("Str1 (%p) : %c \n", &words[1][0], words[1][0]);
-
-
+	// printf("Str1 (%p) : %c \n", &words[1][0], words[1][0]);
 	printf("Str2 (%p) : %s \n", words[2], words[2]);
 	printf("Str3 (%p) : %s \n", words[3], words[3]);
 	printf("Str4 (%p) : %s \n", words[4], words[4]);
