@@ -3,12 +3,12 @@
 /* ---------------------------- */
 //
 // -------------------------------------------------------------------------------
-// | make re && gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out2 && ./a.out2 |
+// | make re && gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out && ./a.out |
 // -------------------------------------------------------------------------------
 //
 // 	a) 	make all	(ou "make fclean" puis "make all" ou "make" ou "make libft.a")
 // 				a.a) 	Optional:	ranlib libft.a 	(créer index dans lib pour trouver rapidement les fonctions nécessaires)
-// 	b)	gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out2 && ./a.out2
+// 	b)	gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out && ./a.out
 // 				b.b) 	Optional:	ar -t libft.a 	(display the modules/functions)
 
 // libft.h

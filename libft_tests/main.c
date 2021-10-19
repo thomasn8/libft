@@ -1233,7 +1233,7 @@ int	main(void)
 	yellow_color();
 	printf("\n!!! Use main2.c to test functions that use write() – Cmd :\n");
 	defaut_color();
-	printf("make re && gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out2 && ./a.out2\n");
+	printf("make re && gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out && ./a.out\n");
 	// defaut_color();
 	return (0);
 }
