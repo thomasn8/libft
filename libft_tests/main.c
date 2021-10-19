@@ -817,6 +817,7 @@ int	main(void)
 	char 	haystack12[50] = "Saluuuuuuuuut";
 	char 	haystack13[50] = "Saluu\0uuuuuuut";
 	char 	haystack14[50] = "";
+	char 	haystack15[30] = "aaabcabcd";
 	char 	needle11[50] = "s";
 	char 	needle12[50] = "t";
 	char 	needle13[50] = "";
@@ -832,6 +833,11 @@ int	main(void)
 	print_errors_pointer("ft_strnstr", ft_strnstr(haystack13, needle13, len11), strnstr(haystack13, needle13, len11));
 	print_errors_pointer("ft_strnstr", ft_strnstr(haystack13, needle14, len11), strnstr(haystack13, needle14, len11));
 	print_errors_pointer("ft_strnstr", ft_strnstr(haystack14, needle12, len11), strnstr(haystack14, needle12, len11));
+	print_errors_pointer("ft_strnstr0", ft_strnstr(haystack15, "cd", 8), strnstr(haystack15, "cd", 8));
+	print_errors_pointer("ft_strnstr1", ft_strnstr(haystack15, "a", 1), strnstr(haystack15, "a", 1));
+	print_errors_pointer("ft_strnstr2", ft_strnstr(haystack15, "a", 2), strnstr(haystack15, "a", 2));
+	print_errors_pointer("ft_strnstr3", ft_strnstr(haystack15, "aa", 2), strnstr(haystack15, "aa", 2));
+	print_errors_pointer("ft_strnstr4", ft_strnstr(haystack15, "aa", 1), strnstr(haystack15, "aa", 1));
 	//
 	// char 	haystack[50] = "Une chaine pas comme les autres";
 	// char 	needle[50] = "comme";
@@ -857,7 +863,7 @@ int	main(void)
 	print_errors("ft_atoi", 	ft_atoi("1"), 				atoi("1"));
 	print_errors("ft_atoi", 	ft_atoi("-0"), 				atoi("-0"));
 	print_errors("ft_atoi", 	ft_atoi("-1"), 				atoi("-1"));
-	print_errors("ft_atoi", 	ft_atoi("       100"), 		atoi("       100"));
+	print_errors("ft_atoi", 	ft_atoi("		100"), 		atoi("		100"));
 	print_errors("ft_atoi", 	ft_atoi("       -100"), 	atoi("       -100"));
 	print_errors("ft_atoi", 	ft_atoi("\0 100"), 			atoi("\0 100"));
 	print_errors("ft_atoi", 	ft_atoi("100\0"), 			atoi("100\0"));
