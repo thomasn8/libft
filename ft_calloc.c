@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 13:51:33 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/17 20:34:37 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:14:03 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
+	size_t	mem;
 	char	*ptr;
 
 	i = -1;
-	ptr = malloc(count * size);
+	mem = count * size;
+	ptr = malloc(mem);
 	if (!ptr)
 		return (NULL);
-	while (++i < (count * size))
+	while (++i < mem)
 		ptr[i] = 0;
 	return ((void *) ptr);
 }

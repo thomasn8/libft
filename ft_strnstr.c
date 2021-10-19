@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:26:20 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 21:43:32 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:00:40 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	if (!len)
 		return (NULL);
 	str_search = str_in_str(haystack, needle, len);
-	if (str_search)
-		return (str_search);
-	return (NULL);
+	return (str_search);
 }
