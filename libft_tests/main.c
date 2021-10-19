@@ -1155,6 +1155,8 @@ int	main(void)
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();
 	printf("%d errors in tests.\n", error_count);
+	red_color();
+	printf("Fonctions non-testées : ft_strmapi(), ft_striteri()\n");
 	defaut_color();
 	return (0);
 }
