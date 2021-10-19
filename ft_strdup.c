@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 13:50:28 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 22:11:18 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 22:19:55 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 char	*ft_strdup(const char *s1)
 {
 	char	*dup;
-	int		len;
-	int		i;
+	size_t	len;
 
 	len = 0;
-	i = -1;
 	while (s1[len])
 		len++;
 	dup = malloc(len * sizeof(char) + 1);
 	if (!dup)
 		return (NULL);
-	while (s1[++i])
-		dup[i] = s1[i];
-	dup[i] = 0;
+	dup[len] = 0;
+	while (len--)
+		dup[len] = s1[len];
 	return (dup);
 }
