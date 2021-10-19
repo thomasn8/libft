@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:14:12 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 18:41:34 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:27:50 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int		i;
+	size_t	i;
 	size_t	src_length;
 
 	src_length = 0;
@@ -28,3 +28,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		*dst++ = *src++;
 	return (src_length);
 }
+
+/*
+strlcpy() take the full size of the destination buffer and
+guarantee NUL-termination if there is room.  
+Note that room for the NUL should be included in dstsize.
+
+strlcpy() copies up to dstsize - 1 characters from the string src to dst,
+NUL-terminating the result if dstsize is not 0.
+
+strlcpy() return the total length of the string it tried to create.  
+For strlcpy() that means the length of src.
+*/
