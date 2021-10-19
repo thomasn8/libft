@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 10:30:08 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 11:28:14 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # include <stddef.h>	// FOR USAGE OF:	typedef unsigned long	size_t
 # include <stdlib.h>	// FOR USAGE OF:	malloc()
+# include <unistd.h>	// FOR USAGE OF:	write()
 
 /* --------------------------------------------------------------- */
 // Part 1 - Libc functions
@@ -84,5 +85,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+void	ft_putchar_fd(char c, int fd);
 
 #endif
