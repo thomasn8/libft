@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:37:49 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 23:51:44 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:57:24 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*ptr;
-
-	ptr = s;
 	while (n--)
-		*ptr++ = 0;
+		*(char *)s++ = 0;
 }

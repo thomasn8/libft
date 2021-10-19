@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 18:19:02 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/16 15:09:10 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 19:52:13 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	len;
+	int	i;
+	int	last_occur;
 
-	len = 0;
-	while (s[len])
-		len++;
-	s = s + len;
-	while (len--)
+	i = -1;
+	last_occur = -1;
+	while (s[++i])
 	{
-		if (*s == c)
-			return ((char *) s);
-		s--;
+		if (s[i] == (char)c)
+			last_occur = i;
 	}
-	if (c == 0 && *s == 0)
-		return ((char *) s);
+	if ((char)c == s[i])
+		return ((char *)&s[i]);
+	if (last_occur > -1)
+		return ((char *)&s[last_occur]);
 	return (NULL);
 }
