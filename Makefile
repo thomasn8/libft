@@ -35,7 +35,7 @@ SRCS	= ft_isalpha.c	\
 
 OBJS	= ${SRCS:.c=.o}
 
-CC		= cc
+CC		= gcc
 
 CFLAGS	= -Wall -Wextra -Werror
 

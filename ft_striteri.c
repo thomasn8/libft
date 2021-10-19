@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 10:29:44 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 10:57:42 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 16:39:09 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
 	if (!s || !(*s))
 		return ;

@@ -194,6 +194,30 @@ int		strjoin_test(char *function_name, char *str, char *strjoin)
 	return (0);
 }
 
+char	donothing(unsigned int i, char c)
+{
+	(void) i;
+	return (c);
+}
+
+char	char_convert_up_one(unsigned int i, char c)
+{
+	(void) i;
+	return (c + 1);
+}
+
+void	donothing_void(unsigned int i, char *s)
+{
+	(void) i;
+	(void) s;
+}
+
+void	char_convert_up_one_void(unsigned int i, char *s)
+{
+	(void) i;
+	*s = *s + 1;
+}
+
 int	main(void)
 {
 	// Makefile test :
@@ -1159,6 +1183,41 @@ int	main(void)
 	// printf("%s\n", ft_itoa(number7));
 
 	//////////////////////////////////////////////////////////////////
+	// poiteurs de fonction :
+	char (*f1)(unsigned int, char);
+	char (*f2)(unsigned int, char);
+	f1 = &donothing;
+	f2 = &char_convert_up_one;
+
+	// void (*f3)(unsigned int, char*);
+	void (*f4)(unsigned int, char*);
+	// f3 = &donothing_void;
+	f4 = &char_convert_up_one_void;
+
+	// ft_strmapi 
+	// (Créer une nouvelle chaine) 
+	char *strmapi1 = "abcdef\0";								// must not change
+	char *strmapi2 = "abcdef\0";								// must not change
+	char *ft_strmapi1 = ft_strmapi(strmapi1, f1);
+	char *ft_strmapi2 = ft_strmapi(strmapi2, f2);
+	print_errors_string("ft_strmapi", strmapi1, "abcdef");		// must not change
+	print_errors_string("ft_strmapi", strmapi2, "abcdef"); 		// must not change
+	print_errors_string("ft_strmapi", ft_strmapi1, "abcdef");
+	print_errors_string("ft_strmapi", ft_strmapi2, "bcdefg");
+	// printf("%s\n", strmapi1);
+	// printf("%s\n", strmapi2);
+	// printf("%s\n", ft_strmapi1);
+	// printf("%s\n", ft_strmapi2);
+
+	// ft_striteri 
+	// (Modifie une chaine de char en mémoire)
+	char *striteri1 = "abcdef\0";
+	// char *striteri2 = "abcdef\0";
+	ft_striteri(striteri1, donothing_void);
+	// ft_striteri(striteri2, f4);
+	printf("striteri1 : %s\n", striteri1);
+	// printf("striteri2 : %s\n", striteri2);
+
 
 	//////////////////////////////////////////////////////////////////
 	// Total of errors in tests

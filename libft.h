@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 14:27:13 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 14:34:09 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <unistd.h>	// FOR USAGE OF:	write()
 
 /* --------------------------------------------------------------- */
-// Part 1 - Libc functions
+// Libc functions
 
 int		ft_isalpha(int c);
 
@@ -70,7 +70,7 @@ char	*ft_strdup(const char *s1);
 void	*ft_calloc(size_t count, size_t size);
 
 /* --------------------------------------------------------------- */
-// Part 2 - Additional functions
+// Additional functions
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
@@ -93,5 +93,8 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 
 void	ft_putnbr_fd(int n, int fd);
+
+/* --------------------------------------------------------------- */
+// Bonus
 
 #endif
