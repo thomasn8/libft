@@ -844,6 +844,7 @@ int	main(void)
 	//////////////////////////////////////////////////////////////////
 
 	// ft_atoi
+	print_errors("ft_atoi", 	ft_atoi("1"), 				atoi("1"));
 	print_errors("ft_atoi", 	ft_atoi("abc123"), 			atoi("abc123"));
 	print_errors("ft_atoi", 	ft_atoi("123abc"), 			atoi("123abc"));
 	print_errors("ft_atoi", 	ft_atoi("    abc123"), 		atoi("    abc123"));
@@ -1211,11 +1212,11 @@ int	main(void)
 
 	// ft_striteri 
 	// (Modifie une chaine de char en mémoire)
-	char *striteri1 = "abcdef\0";
+	// char *striteri1 = "abcdef\0";
 	// char *striteri2 = "abcdef\0";
-	ft_striteri(striteri1, donothing_void);
+	// ft_striteri(striteri1, donothing_void);
 	// ft_striteri(striteri2, f4);
-	printf("striteri1 : %s\n", striteri1);
+	// printf("striteri1 : %s\n", striteri1);
 	// printf("striteri2 : %s\n", striteri2);
 
 
