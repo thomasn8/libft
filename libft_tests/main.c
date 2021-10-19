@@ -44,6 +44,14 @@ void	green_color(void)
 {
 	printf("\033[0;32m");
 }
+void	yellow_color(void)
+{
+	printf("\033[0;33m");
+}
+void	blue_color(void)
+{
+	printf("\033[0;34m");
+}
 
 int		print_errors(char *function_name, int ft_function, int c_function)
 {
@@ -1152,11 +1160,14 @@ int	main(void)
 
 	//////////////////////////////////////////////////////////////////
 
+	//////////////////////////////////////////////////////////////////
 	// Total of errors in tests
 	error_count > 0 ? red_color() : green_color();
 	printf("%d errors in tests.\n", error_count);
-	red_color();
-	printf("Fonctions non-testées : ft_strmapi(), ft_striteri(), ft_putchar_fd()\n");
+	yellow_color();
+	printf("\n!!! Use main2.c to test functions that use write() – Cmd :\n");
 	defaut_color();
+	printf("make re && gcc -Wall -Wextra -Werror libft_tests/main2.c -L. -lft -o a.out2 && ./a.out2\n");
+	// defaut_color();
 	return (0);
 }
