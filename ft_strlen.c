@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 13:26:58 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 18:58:04 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:01:41 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t	l;
 
-	len = 0;
-	while (s[len])
-		len++;
-	len *= sizeof(char);
-	return (len);
+	l = 0;
+	while (s[l])
+		l++;
+	return (l);
 }
