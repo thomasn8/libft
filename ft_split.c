@@ -75,7 +75,7 @@ static int	words_alloc(char **tab, char const *s, char c, int i)
 	}
 	// printf("start : %d / %c\n", start, s[start]);
 	// printf("end : %d/%c\n", end, s[end]);
-	// printf("i : %d/%c\n", i, s[i]);
+	// printf("i : %d/%c\n", i, s[i]); 
 	if (start != end)
 	{
 		tab[word] = malloc(1 * sizeof(char));
