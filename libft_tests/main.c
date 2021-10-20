@@ -1076,14 +1076,25 @@ int	main(void)
 	char *strtrimed;
 	strtrimed = ft_strtrim(strtrim1, set1);
 	// printf("\n%s\n", strtrimed);
-	print_errors_string("ft_strtrim", strtrimed, "Une_chaine_comme_ça");
+	print_errors_string("ft_strtrim", strtrimed, "Une_chaine_comme_ça\0");
 	//
-	char *strtrim2 = "        ........,,,{{{{{{{[[[[[[[[((((((((   ...  Il était une fois ...   ))))))))]]]]]]]]}}}}}},,,........          \0";
+	char *strtrim2 = "        ........,,,{{{{{{{[[[[[[[[((( Il était une fois ...   ))))))))]]]]]]]]}}}}}},,,........          \0";
 	char *set2 = " .,()[]{}\0";
 	char *strtrimed2;
 	strtrimed2 = ft_strtrim(strtrim2, set2);
 	// printf("\n%s\n", strtrimed2);
-	print_errors_string("ft_strtrim", strtrimed2, "Il était une fois");
+	print_errors_string("ft_strtrim", strtrimed2, "Il était une fois\0");
+	//
+	char *strtrim3 = "   xxx   xxx\0";
+	char *set3 = " x\0";
+	char *strtrimed3;
+	strtrimed3 = ft_strtrim(strtrim3, set3);
+	// printf("\n%s\n", strtrimed2);
+	print_errors_string("ft_strtrim", strtrimed3, "");
+	//
+	// s = ft_strtrim("   xxx   xxx", " x");
+	// /* 7 */ check(!strcmp(s, ""));
+	// /* 8 */ mcheck(s, 1); free(s); showLeaks();
 
 	// ft_split
 	char *s1 = "_Une__petite_chaineeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee____de_caracteres.\0";

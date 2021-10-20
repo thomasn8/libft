@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 23:15:31 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 10:46:07 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:11:56 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		len_s1++;
 	while (s2[len_s2])
 		len_s2++;
-	strjoin = (char *)malloc((len_s1 + len_s2) * sizeof(char) + 1);
+	strjoin = malloc((len_s1 + len_s2) * sizeof(char) + 1);
 	if (!strjoin)
 		return (NULL);
 	while (++i < len_s1)

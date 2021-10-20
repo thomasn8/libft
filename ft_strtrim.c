@@ -6,81 +6,75 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/18 23:16:56 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/20 18:18:40 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
 
-static int	slen(char const *s1)
+static int	get_start(char const *s1, char const *set, int len)
 {
-	int	len;
-
-	len = 0;
-	while (s1[len])
-		len++;
-	return (len - 1);
-}
-
-static int	trim_start_count(char const *s1, char const *set)
-{
-	int	trim_start;
+	int	start;
 	int	i;
 	int	j;
 
-	trim_start = 0;
+	start = 0;
 	j = -1;
 	i = 0;
-	while (set[++j])
+	while (set[++j] && len)
 	{
 		if (set[j] == s1[i])
 		{
-			trim_start++;
+			start++;
 			i++;
 			j = -1;
+			len--;
 		}
 	}
-	return (trim_start);
+	return (start);
 }
 
-static int	trim_end_count(char const *s1, char const *set, int len)
+static int	get_end(char const *s1, char const *set, int len)
 {
-	int	trim_end;
 	int	j;
 
-	trim_end = 0;
+	len--;
 	j = -1;
 	while (set[++j])
 	{
 		if (set[j] == s1[len])
 		{
-			trim_end++;
 			len--;
 			j = -1;
 		}
 	}
-	return (trim_end);
+	return (len);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*strtrim;
 	int		len;
-	int		trim_start;
-	int		trim_end;
+	int		start;
+	int		end;
 	int		i;
 
-	strtrim = NULL;
-	len = slen(s1);
-	trim_start = trim_start_count(s1, set);
-	trim_end = trim_end_count(s1, set, len);
-	strtrim = malloc((len - trim_start - trim_end) * sizeof(char) + 1);
-	if (! strtrim)
+	len = 0;
+	i = 0;
+	while (s1[len])
+		len++;
+	start = get_start(s1, set, len);
+	if(start >= len)
 		return (NULL);
-	i = -1;
-	len = len - trim_start - trim_end + 1;
-	while (++i < len)
-		strtrim[i] = s1[trim_start++];
-	strtrim[i] = 0;
+	end = get_end(s1, set, len);
+	len = end - start + 1;
+	if(len <= 0)
+		return (NULL);
+	strtrim = malloc(len * sizeof(char) + 1);
+	if (!strtrim)
+		return (NULL);
+	strtrim[len] = 0;
+	while (len--)
+		strtrim[i++] = s1[start++];
 	return (strtrim);
 }
