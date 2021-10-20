@@ -112,6 +112,6 @@ char	**ft_split(char const *s, char c)
 	if ((words_alloc(tab, s, c, i)) == 0)
 		return (NULL);
 	words_split(tab, s, c, i);
-	tab[words][0] = 0;
+	tab[words] = NULL;
 	return (tab);
 }

@@ -1196,7 +1196,7 @@ int	main(void)
 	}
 	// printf("%s\n", tab[0]);
 	// printf("%s\n", tab[1]);
-	// printf("%s\n", tab[2]);
+	printf("%s\n", tab[2]);
 	// focus_on_backslash_zero(tab[2], 15);
 	
 	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
