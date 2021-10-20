@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/20 19:26:07 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:31:50 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,23 @@ static int	get_end(char const *s1, char const *set, int len)
 	return (len);
 }
 
+static char	*sdup(const char *s1)
+{
+	char	*dup;
+	size_t	len;
+
+	len = 0;
+	while (s1[len])
+		len++;
+	dup = malloc(len * sizeof(char) + 1);
+	if (!dup)
+		return (NULL);
+	dup[len] = 0;
+	while (len--)
+		dup[len] = s1[len];
+	return (dup);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*strtrim;
@@ -65,11 +82,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		len++;
 	start = get_start(s1, set, len);
 	if (start >= len)
-		return (NULL);
+		return (sdup(""));
 	end = get_end(s1, set, len);
 	len = end - start + 1;
 	if (len <= 0)
-		return (NULL);
+		return (sdup(""));
 	strtrim = malloc(len * sizeof(char) + 1);
 	if (!strtrim)
 		return (NULL);
