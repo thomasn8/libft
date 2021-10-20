@@ -1187,14 +1187,17 @@ int	main(void)
 	// print_errors_string("ft_split", words6[74], "st laborum.");
 
 	// SPLIT TRIPOUILLE TESTS
-	char **tab = ft_split("  tripouille  42     ", ' ');
-	// while(tab)
-	// 	printf("%s\n", *tab++);
-
-	// printf("\n%s\n", tab[0]);
+	char **tab = ft_split("  tripouille  42  ", ' ');
+	int t = 0;
+	while(tab[t])
+	{
+		printf("%s\n", tab[t]);
+		t++;
+	}
+	// printf("%s\n", tab[0]);
 	// printf("%s\n", tab[1]);
 	// printf("%s\n", tab[2]);
-	focus_on_backslash_zero(tab[2], 15);
+	// focus_on_backslash_zero(tab[2], 15);
 	
 	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
 
