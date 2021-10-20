@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/20 18:18:40 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/20 19:26:07 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[len])
 		len++;
 	start = get_start(s1, set, len);
-	if(start >= len)
+	if (start >= len)
 		return (NULL);
 	end = get_end(s1, set, len);
 	len = end - start + 1;
-	if(len <= 0)
+	if (len <= 0)
 		return (NULL);
 	strtrim = malloc(len * sizeof(char) + 1);
 	if (!strtrim)
