@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 01:11:21 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 18:32:04 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:06:45 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 	s = src;
 	d = dst;
+	if (dst != NULL || src != NULL)
+	{
 	if (d > s)
 		while (n--)
 			d[n] = s[n];
 	else
 		while (n--)
 			*d++ = *s++;
+	}
 	return (dst);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 00:08:07 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 18:32:58 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 12:04:24 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	if (!dst)
-		return (NULL);
-	while (n--)
-		*(char *)dst++ = *(char *)src++;
+	char	*ptr_dst;
+	char	*ptr_src;
+
+	ptr_dst = dst;
+	ptr_src = (char *)src;
+	if (dst != NULL || src != NULL)
+	{
+		while (n--)
+			*ptr_dst++ = *ptr_src++;
+	}
 	return (dst);
 }
