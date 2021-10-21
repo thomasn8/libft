@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 23:55:52 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 00:29:12 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ static char	*word_dup(const char *str, int start, int end)
 	int		i;
 
 	i = 0;
-	word = malloc((end - start + 2) * sizeof(char));
-	while (start <= end)
+	word = malloc((end - start + 1) * sizeof(char));
+	while (start < end)
 		word[i++] = str[start++];
 	word[i] = 0;
 	return (word);
@@ -70,7 +70,7 @@ static int	words_split(char **tab, char const *s, char c)
 			tab[word] = malloc(1 * sizeof(char));
 			return (1);
 		}
-		tab[word++] = word_dup(s, start, end - 1);
+		tab[word++] = word_dup(s, start, end);
 	}
 	return (1);
 }
