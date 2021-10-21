@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 23:15:31 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/20 13:11:56 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:39:06 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	len_s2 = 0;
 	i = -1;
 	j = -1;
+	if (!s1 || !s2)
+		return (NULL);
 	while (s1[len_s1])
 		len_s1++;
 	while (s2[len_s2])

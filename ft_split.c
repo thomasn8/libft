@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 11:46:37 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:38:34 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,27 +61,28 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 	int		index;
-	char	**split;
+	char	**tab;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!s)
 		return (0);
-	i = 0;
+	tab = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!tab)
+		return (0);
+	i = -1;
 	j = 0;
 	index = -1;
-	while (i <= strlen(s))
+	while (++i <= strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;
 		else if ((s[i] == c || i == strlen(s)) && index >= 0)
 		{
-			split[j++] = word_dup(s, index, i);
+			tab[j++] = word_dup(s, index, i);
 			index = -1;
 		}
-		i++;
 	}
-	split[j] = 0;
-	return (split);
+	tab[j] = 0;
+	return (tab);
 }
 
 /*

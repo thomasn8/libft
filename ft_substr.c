@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 22:14:28 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/20 13:01:10 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:22:38 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = 0;
 	j = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (i >= start && j < len)

@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:05:16 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 12:10:22 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/21 19:31:10 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	u_c;
+	unsigned char		u_c;
 	const unsigned char	*str;
 
 	u_c = c;
