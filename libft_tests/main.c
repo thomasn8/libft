@@ -454,7 +454,18 @@ int	main(void)
 	char c_strlcpy_dst3[14] = {0};
 	print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst3, ft_strlcpy_src3, 14),	strlcpy(c_strlcpy_dst3, c_strlcpy_src3, 14));
 	print_errors_string("ft_strlcpy",	ft_strlcpy_dst3,	c_strlcpy_dst3);
-	// 
+	//
+	// char *ft_strlcpy_src4 = (void *)0;
+	// char *ft_strlcpy_dst4 = (void *)0;
+	// char *c_strlcpy_src4 = (void *)0;
+	// char *c_strlcpy_dst4 = (void *)0;
+	// ft_strlcpy(ft_strlcpy_dst4, ft_strlcpy_src4, 10);
+	// strlcpy(c_strlcpy_dst4, c_strlcpy_src4, 10);
+	// print_errors_size("ft_strlcpy",	ft_strlcpy(ft_strlcpy_dst4, ft_strlcpy_src4, 10),	strlcpy(c_strlcpy_dst4, c_strlcpy_src4, 10));
+	// print_errors_string("ft_strlcpy",	ft_strlcpy_dst4,	c_strlcpy_dst4);
+	
+	// print_errors_size("ft_strlcpy",	ft_strlcpy(((void *)0), ((void *)0), 10),	ft_strlcpy(((void *)0), ((void *)0), 10));
+	// print_errors_string("ft_strlcpy",	ft_strlcpy_dst3,	c_strlcpy_dst3);
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst1);
 	// printf("c_strlcpy_dst1 : %s\n", c_strlcpy_dst1);
 	// printf("ft_strlcpy_dst1 : %s\n", ft_strlcpy_dst2);
