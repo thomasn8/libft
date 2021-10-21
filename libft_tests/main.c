@@ -1187,28 +1187,29 @@ int	main(void)
 	// print_errors_string("ft_split", words6[74], "st laborum.");
 
 	// SPLIT TRIPOUILLE TESTS
-	char **tab = ft_split("  tripouille  42  ", ' ');
-	int t = 0;
-	while(tab[t])
-	{
-		printf("%s\n", tab[t]);
-		t++;
-	}
+	// char **tab = ft_split("  tripouille  42  ", ' ');
+	// int t = 0;
+	// while(tab[t])
+	// {
+	// 	printf("%s\n", tab[t]);
+	// 	t++;
+	// }
 	// printf("%s\n", tab[0]);
 	// printf("%s\n", tab[1]);
-	printf("%s\n", tab[2]);
+	// printf("%s\n", tab[2]);
 	// focus_on_backslash_zero(tab[2], 15);
-	
-	// /* 1 */ mcheck(tab, sizeof(char *) * 3);
-
-	// /* 2 */ check(!strcmp(tab[0], "tripouille"));
-	// /* 3 */ mcheck(tab[0], strlen("tripouille") + 1);
-
-	// /* 4 */ check(!strcmp(tab[1], "42"));
-	// /* 5 */ mcheck(tab[1], strlen("42") + 1);
-
-	// /* 6 */ check(tab[2] == NULL);
 	// freeTab(tab); showLeaks();
+
+	char **tab = ft_split("     ", ' ');
+	// int t = 0;
+	// while(tab[t])
+	// {
+	// 	printf("%s\n", tab[t]);
+	// 	t++;
+	// }
+	printf("%s\n", tab[0]);
+	// /* 9 */ check(tab[0] == NULL);
+	// free(tab); showLeaks();
 
 
 	// ft_itoa 
