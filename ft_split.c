@@ -137,23 +137,22 @@ char	**ft_split(char const *s, char c)
 // 		l++;
 // 	return (l);
 // }
-
 // static int	count_words(const char *str, char c)
 // {
 // 	int i;
-// 	int switcher;
+// 	int trigger;
 
 // 	i = 0;
-// 	switcher = 0;
+// 	trigger = 0;
 // 	while (*str)
 // 	{
-// 		if (*str != c && switcher == 0)
+// 		if (*str != c && trigger == 0)
 // 		{
-// 			switcher = 1;
+// 			trigger = 1;
 // 			i++;
 // 		}
 // 		else if (*str == c)
-// 			switcher = 0;
+// 			trigger = 0;
 // 		str++;
 // 	}
 // 	return (i);
@@ -176,28 +175,25 @@ char	**ft_split(char const *s, char c)
 // {
 // 	size_t	i;
 // 	size_t	j;
-// 	size_t	len;
 // 	int		index;
-// 	char	**tab;
+// 	char	**split;
 
-// 	tab = malloc((count_words(s, c) + 1) * sizeof(char *)))
-// 	if (!s || !tab)
+// 	if (!s || !(split = malloc((count_words(s, c) + 1) * sizeof(char *))))
 // 		return (0);
 // 	i = 0;
 // 	j = 0;
-// 	len = strlen(s);
 // 	index = -1;
-// 	while (i <= len)
+// 	while (i <= strlen(s))
 // 	{
 // 		if (s[i] != c && index < 0)
 // 			index = i;
-// 		else if ((s[i] == c || i == len)) && index >= 0)
+// 		else if ((s[i] == c || i == strlen(s)) && index >= 0)
 // 		{
-// 			tab[j++] = word_dup(s, index, i);
+// 			split[j++] = word_dup(s, index, i);
 // 			index = -1;
 // 		}
 // 		i++;
 // 	}
-// 	tab[j] = 0;
-// 	return (tab);
+// 	split[j] = 0;
+// 	return (split);
 // }
