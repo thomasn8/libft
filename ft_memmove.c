@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 01:11:21 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:18:03 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:52:50 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {

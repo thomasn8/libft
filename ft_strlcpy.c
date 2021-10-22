@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:14:12 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:21:00 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:55:19 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
