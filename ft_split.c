@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 14:53:37 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 15:08:49 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char	*word_dup(const char *str, int word_n, int start, int end)
 	return (word);
 }
 
-static int	words_split(char **tab, char const *s, char c)
+static char	**	words_split(char **tab, char const *s, char c)
 {
 	int	i;
 	int	start;
@@ -68,11 +68,11 @@ static int	words_split(char **tab, char const *s, char c)
 			i++;
 		end = i;
 		if (!s[i] && start == end && word > 0)
-			return (1);
+			return (tab);
 		tab[word] = word_dup(s, word, start, end);
 		word++;
 	}
-	return (1);
+	return (tab);
 }
 
 char	**ft_split(char const *s, char c)
