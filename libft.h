@@ -6,7 +6,7 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 16:01:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:47:30 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 14:04:08 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // Part 0 - Included libraries
 
 //# include <stddef.h>	// FOR USAGE OF:	typedef unsigned long	size_t
-# include <stdlib.h>	// FOR USAGE OF:	malloc()
+# include <stdlib.h>	// FOR USAGE OF:	malloc() && typedef unsigned long	size_t
 # include <unistd.h>	// FOR USAGE OF:	write()
 
 /* --------------------------------------------------------------- */
