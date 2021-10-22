@@ -6,15 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 08:57:54 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 10:58:09 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:22:31 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
-
-// Créer une nouvelle chaine de char 
-// sur la base d'une chaine donnée (sans modifier cette chaine !) 
-// en lui appliquant une fonction donnée
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

@@ -6,11 +6,9 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 14:54:07 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/15 16:51:28 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:24:04 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libc.h"
 
 int	ft_toupper(int c)
 {

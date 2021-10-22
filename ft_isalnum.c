@@ -6,11 +6,9 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 11:47:05 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/13 16:12:38 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:16:23 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isalnum(int c)
 {

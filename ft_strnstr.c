@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 11:26:20 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 22:00:40 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:22:53 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 static char	*str_in_str(const char *haystack, const char *needle, size_t len)
 {

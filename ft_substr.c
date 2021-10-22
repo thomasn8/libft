@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 22:14:28 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 19:22:38 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:23:48 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

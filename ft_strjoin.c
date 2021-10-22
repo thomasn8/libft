@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/17 23:15:31 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 19:39:06 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:20:43 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

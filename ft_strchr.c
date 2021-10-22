@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:54:59 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 19:18:09 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:20:05 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

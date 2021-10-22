@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 13:50:28 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 22:19:55 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:20:11 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

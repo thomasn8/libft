@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:05:16 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 19:31:10 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:17:28 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

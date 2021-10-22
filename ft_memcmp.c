@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 21:58:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 19:05:14 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:17:32 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

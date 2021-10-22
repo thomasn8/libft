@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 16:40:15 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/21 11:40:16 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:16:56 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 static int	n_len(int n)
 {

@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 13:51:33 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/19 22:14:03 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:16:17 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

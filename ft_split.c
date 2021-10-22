@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:44:55 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 00:29:12 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/22 13:19:18 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libc.h"
+#include "libft.h"
 
 static int	words_count(const char *str, char c)
 {
