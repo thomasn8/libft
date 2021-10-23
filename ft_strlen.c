@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 13:26:58 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:55:39 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/23 09:21:06 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

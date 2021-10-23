@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 21:26:14 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:57:45 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/23 09:21:21 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	get_start(char const *s1, char const *set, int len)
 {

@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 21:37:49 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:46:03 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/23 09:19:56 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

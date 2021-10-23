@@ -6,11 +6,11 @@
 /*   By: tnanchen <thomasnanchen@hotmail.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 11:53:50 by tnanchen          #+#    #+#             */
-/*   Updated: 2021/10/22 13:53:28 by tnanchen         ###   ########.fr       */
+/*   Updated: 2021/10/23 09:20:38 by tnanchen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 static void	putchar_fd(char c, int fd)
 {
